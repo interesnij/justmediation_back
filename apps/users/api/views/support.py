@@ -15,7 +15,10 @@ class SupportViewSet(
 ):
     """Endpoint for search support users and their registration."""
     serializer_class = serializers.SupportSerializer
-    queryset = models.Support.objects.all().verified().paid().select_related(
+    #queryset = models.Support.objects.all().verified().paid().select_related(
+    #    'user'
+    #)
+    queryset = models.Support.objects.all().verified().select_related(
         'user'
     )
     permissions_map = {
