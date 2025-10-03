@@ -18,9 +18,7 @@ class SupportViewSet(
     #queryset = models.Support.objects.all().verified().paid().select_related(
     #    'user'
     #)
-    queryset = models.Support.objects.all().verified().select_related(
-        'user'
-    )
+    queryset = models.Support.objects.all()
     permissions_map = {
         'create': (AllowAny,)
     }
