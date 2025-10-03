@@ -95,13 +95,13 @@ class SupportAdmin(BaseAdmin):
     #decline_support.short_description = _('Decline profile')
 
     #def _payment(self, obj: models.Support):
-        """Return HTML link to `payment`."""
+    #    """Return HTML link to `payment`."""
     #    return self._admin_url(obj.payment)
 
     #_payment.short_description = _('Fee payment')
 
     #def _link_to_user(self, obj: models.Support):
-        """Return HTML link to `user`."""
+    #    """Return HTML link to `user`."""
     #    return self._admin_url(obj.user)
 
     #_link_to_user.short_description = _('Link to user')
