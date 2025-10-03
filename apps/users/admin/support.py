@@ -45,8 +45,8 @@ class SupportAdmin(BaseAdmin):
                 'email',
                 'description',
                 'verification_status',
-                'payment_status',
-                '_payment',
+                #'payment_status',
+                #'_payment',
             )
         }),
     )
@@ -54,54 +54,54 @@ class SupportAdmin(BaseAdmin):
         'email',
         'display_name',
         'verification_status',
-        'payment_status',
-        '_payment',
+        #'payment_status',
+        #'_payment',
         '_link_to_user',
     )
     create_only_fields = (
         'user',
     )
-    change_actions = [
-        'verify_support',
-        'decline_support'
-    ]
+    #change_actions = [
+    #    'verify_support',
+    #    'decline_support'
+    #]
 
-    def verify_support(self, request, support: models.Support):
-        """Verify support profile and send notification email."""
-        if support.is_in_progress or support.is_paid:
-            self.message_user(request, VERIFICATION_ERROR_MSG, messages.ERROR)
-            return
+    #def verify_support(self, request, support: models.Support):
+    #    """Verify support profile and send notification email."""
+    #    if support.is_in_progress or support.is_paid:
+    #        self.message_user(request, VERIFICATION_ERROR_MSG, messages.ERROR)
+    #        return
 
-        support.verify_by_admin()
-        self.message_user(
-            request, 'user has been verified', messages.SUCCESS
-        )
+    #    support.verify_by_admin()
+    #    self.message_user(
+    #        request, 'user has been verified', messages.SUCCESS
+    #    )
 
-    verify_support.label = _('Verify')
-    verify_support.short_description = _('Verify profile')
+    #verify_support.label = _('Verify')
+    #verify_support.short_description = _('Verify profile')
 
-    def decline_support(self, request, support: models.Support):
+    #def decline_support(self, request, support: models.Support):
         """Decline support profile and send notification email."""
-        if support.is_in_progress or support.is_paid:
-            self.message_user(request, VERIFICATION_ERROR_MSG, messages.ERROR)
-            return
+    #    if support.is_in_progress or support.is_paid:
+    #        self.message_user(request, VERIFICATION_ERROR_MSG, messages.ERROR)
+    #        return
 
-        support.decline_by_admin()
-        self.message_user(
-            request, 'user has been declined', messages.SUCCESS
-        )
+    #    support.decline_by_admin()
+    #    self.message_user(
+    #        request, 'user has been declined', messages.SUCCESS
+    #    )
 
-    decline_support.label = _('Decline')
-    decline_support.short_description = _('Decline profile')
+    #decline_support.label = _('Decline')
+    #decline_support.short_description = _('Decline profile')
 
-    def _payment(self, obj: models.Support):
+    #def _payment(self, obj: models.Support):
         """Return HTML link to `payment`."""
-        return self._admin_url(obj.payment)
+    #    return self._admin_url(obj.payment)
 
-    _payment.short_description = _('Fee payment')
+    #_payment.short_description = _('Fee payment')
 
-    def _link_to_user(self, obj: models.Support):
+    #def _link_to_user(self, obj: models.Support):
         """Return HTML link to `user`."""
-        return self._admin_url(obj.user)
+    #    return self._admin_url(obj.user)
 
-    _link_to_user.short_description = _('Link to user')
+    #_link_to_user.short_description = _('Link to user')
