@@ -33,11 +33,26 @@ LOGGING = {
             'class': 'logging.StreamHandler',
             'formatter': 'verbose'
         },
+        'stripe_log': {
+            'level': 'ERROR',
+            'class': 'logging.FileHandler',
+            'filename': '/var/log/stripe.log',
+        },
+        'firestore_log': {
+            'level': 'ERROR',
+            'class': 'logging.FileHandler',
+            'filename': '/var/log/firestore.log',
+        },
         #'docusign_log': {
         #    'level': 'ERROR',
         #    'class': 'logging.FileHandler',
         #    'filename': '/var/log/docusign.log',
         #},
+        'quickbooks_log': {
+            'level': 'ERROR',
+            'class': 'logging.FileHandler',
+            'filename': '/var/log/quickbooks.log',
+        },
     },
     'loggers': {
         'django.request': {
@@ -55,6 +70,24 @@ LOGGING = {
         },
         'stripe': {
             'handlers': ['stripe_log'],
+            'level': 'ERROR',
+            'propagate': True,
+            'formatter': 'minimal',
+        },
+        'firestore': {
+            'handlers': ['firestore_log'],
+            'level': 'ERROR',
+            'propagate': True,
+            'formatter': 'minimal',
+        },
+        #'docusign': {
+        #    'handlers': ['docusign_log'],
+        #    'level': 'ERROR',
+        #    'propagate': True,
+        #    'formatter': 'minimal',
+        #},
+        'quickbooks': {
+            'handlers': ['quickbooks_log'],
             'level': 'ERROR',
             'propagate': True,
             'formatter': 'minimal',
