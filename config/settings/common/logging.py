@@ -38,11 +38,6 @@ LOGGING = {
             'class': 'logging.FileHandler',
             'filename': '/var/log/stripe.log',
         },
-        'firestore_log': {
-            'level': 'ERROR',
-            'class': 'logging.FileHandler',
-            'filename': '/var/log/firestore.log',
-        },
         #'docusign_log': {
         #    'level': 'ERROR',
         #    'class': 'logging.FileHandler',
