@@ -33,21 +33,11 @@ LOGGING = {
             'class': 'logging.StreamHandler',
             'formatter': 'verbose'
         },
-        'stripe_log': {
-            'level': 'ERROR',
-            'class': 'logging.FileHandler',
-            'filename': '/var/log/stripe.log',
-        },
         #'docusign_log': {
         #    'level': 'ERROR',
         #    'class': 'logging.FileHandler',
         #    'filename': '/var/log/docusign.log',
         #},
-        'quickbooks_log': {
-            'level': 'ERROR',
-            'class': 'logging.FileHandler',
-            'filename': '/var/log/quickbooks.log',
-        },
     },
     'loggers': {
         'django.request': {
