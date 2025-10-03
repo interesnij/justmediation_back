@@ -141,17 +141,17 @@ class AppUser(BaseModel, AbstractBaseUser, PermissionsMixin):
         )
     )
 
-    #active_subscription = models.ForeignKey(
-    #    to='finance.SubscriptionProxy',
-    #    verbose_name=_('Current active subscription'),
-    #    on_delete=models.SET_NULL,
-    #    related_name='appuser',
-    #    null=True,
-    #    blank=True,
-    #    help_text=_(
-    #        'Represents related to user current active stripe subscription'
-    #    ),
-    #)
+    active_subscription = models.ForeignKey(
+        to='finance.SubscriptionProxy',
+        verbose_name=_('Current active subscription'),
+        on_delete=models.SET_NULL,
+        related_name='appuser',
+        null=True,
+        blank=True,
+        help_text=_(
+            'Represents related to user current active stripe subscription'
+        ),
+    )
     avatar = models.CharField(
         max_length=255,
         verbose_name=_('Avatar'),
