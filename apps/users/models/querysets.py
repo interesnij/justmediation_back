@@ -50,8 +50,8 @@ class AppUserQuerySet(models.QuerySet):
         Если определено "значение" - удалите уже совместно используемых адвокатов из qs.
         """
         from . import Mediator
-        #mediators = Mediator.objects.verified() \
-        #    .has_active_subscription().values_list('pk', flat=True)
+        mediators = Mediator.objects.verified() \
+            .has_active_subscription().values_list('pk', flat=True)
         mediators = Mediator.objects.verified().values_list('pk', flat=True)
 
         available = self.exclude(is_staff=True).filter(
@@ -82,9 +82,9 @@ class AppUserQuerySet(models.QuerySet):
         """ Получите набор запросов пользователей приложения, которые являются 
         только проверенными адвокатами. """
         from . import Mediator
-        #mediators = Mediator.objects.real_users().verified() \
-        #    .has_active_subscription()
-        #return self.filter(id__in=mediators.values_list('user__id', flat=True))
+        mediators = Mediator.objects.real_users().verified() \
+            .has_active_subscription()
+        return self.filter(id__in=mediators.values_list('user__id', flat=True))
 
     def clients(self):
         """ Получите набор запросов пользователей клиентов. """
@@ -148,7 +148,6 @@ class MediatorQuerySet(VerifiedRegistrationQuerySet):
 
     def has_active_subscription(self):
         """ Возвращайте адвокатов с активной подпиской. """
-        return True
         return self.exclude(user__active_subscription__isnull=True)
 
     def aggregate_count_stats(self):

@@ -28,7 +28,7 @@ class IsMediatorHasActiveSubscription(permissions.BasePermission):
         """ Проверьте, действительна ли подписка и является ли пользователь адвокатом """
         if not request.user.is_mediator:
             return False
-        return False
+
         return request.user.has_active_subscription
 
 

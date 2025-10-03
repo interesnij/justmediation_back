@@ -68,17 +68,17 @@ class MediatorFactory(factory.DjangoModelFactory):
 class MediatorVerifiedFactory(MediatorFactory):
     """Create verified mediator."""
 
-    #user__active_subscription = factory.SubFactory(
-    #    'apps.finance.factories.SubscriptionProxyFactory'
-    #)
+    user__active_subscription = factory.SubFactory(
+        'apps.finance.factories.SubscriptionProxyFactory'
+    )
 
     @factory.post_generation
     @override_settings(STRIPE_ENABLED=False)
     def verify_mediator(self: Mediator, create, extracted, **kwargs):
         """Set `STRIPE_ENABLED = False` for success verification"""
-        #self.verify()
-        #self.user.has_active_subscription = True
-        #self.user.save()
+        self.verify()
+        self.user.has_active_subscription = True
+        self.user.save()
 
 
 class MediatorFactoryWithAllInfo(MediatorVerifiedFactory):

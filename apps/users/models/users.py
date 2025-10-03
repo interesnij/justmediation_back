@@ -47,7 +47,7 @@ class AppUser(BaseModel, AbstractBaseUser, PermissionsMixin):
             этот сайт администратора
         is_active (bool): указывает, должен ли этот пользователь быть
             рассматривается как активный
-        #active_subscription (SubscriptionProxy): ссылка на активную текущую подписку.
+        active_subscription (SubscriptionProxy): ссылка на активную текущую подписку.
             объект подписки
         date_joined (datetime): когда пользователь присоединился
         specialities (Speciality): Это поле имеет два значения:
@@ -308,7 +308,6 @@ class AppUser(BaseModel, AbstractBaseUser, PermissionsMixin):
     @cached_property
     def has_active_subscription(self) -> bool:
         """ Проверьте, есть ли у пользователя активная подписка """
-        return False
         return self.is_free_subscription | bool(self.active_subscription_id)
 
     @cached_property
@@ -438,7 +437,6 @@ class AppUserHelperMixin:
     @cached_property
     def has_active_subscription(self) -> bool:
         """ Проверьте, есть ли у пользователя активная подписка """
-        return False
         return self.user.is_free_subscription | bool(self.user.active_subscription_id)
 
     @cached_property

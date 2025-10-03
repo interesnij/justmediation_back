@@ -112,7 +112,7 @@ class AppUserAdmin(ExportMixin, UserAdmin, BaseAdmin):
                 'is_staff',
                 'is_superuser',
                 'twofa',
-                #'_has_active_subscription',
+                '_has_active_subscription',
                 'groups',
                 'user_permissions',
                 'onboarding',
@@ -127,7 +127,7 @@ class AppUserAdmin(ExportMixin, UserAdmin, BaseAdmin):
     )
     readonly_fields = (
         'avatar_display',
-        #'_has_active_subscription',
+        '_has_active_subscription',
         '_user_type_display',
         '_link_to_profile',
     )

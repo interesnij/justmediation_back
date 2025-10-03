@@ -59,9 +59,9 @@ class MediatorSerializer(AppUserRelatedSerializerMixin, BaseSerializer):
         source='fee_currency', read_only=True
     )
     is_verified = serializers.ReadOnlyField()
-    #has_active_subscription = serializers.ReadOnlyField(
-    #    source='user.has_active_subscription'
-    #)
+    has_active_subscription = serializers.ReadOnlyField(
+        source='user.has_active_subscription'
+    )
     timezone = serializers.PrimaryKeyRelatedField(
         source='user.timezone',
         queryset=models.TimeZone.objects.all(),
@@ -99,7 +99,7 @@ class MediatorSerializer(AppUserRelatedSerializerMixin, BaseSerializer):
             'website',
             'firm_locations',
             'is_verified',
-            #'has_active_subscription',
+            'has_active_subscription',
             'verification_status',
             'featured',
             'sponsored',
@@ -122,7 +122,7 @@ class MediatorSerializer(AppUserRelatedSerializerMixin, BaseSerializer):
             'keywords',
             'is_submittable_potential',
             #'attachment', # всесто registration_attachments
-            #'registration_attachments',
+            'registration_attachments',
             'appointment_type',
             'payment_type',
             'spoken_language',
@@ -243,7 +243,7 @@ class MediatorShortSerializer(MediatorSerializer):
             'verification_status',
             'featured',
             'sponsored',
-            #'has_active_subscription',
+            'has_active_subscription',
             'specialities',
             'is_mediator',
         )

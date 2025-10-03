@@ -81,9 +81,9 @@ class MediatorVerificationMixin:
 
     def verify_mediator(self, request, mediator: models.Mediator):
         """Verify mediator profile and send notification email."""
-        #if mediator.user.has_active_subscription:
-        #    self.message_user(request, VERIFICATION_ERROR_MSG, messages.ERROR)
-        return
+        if mediator.user.has_active_subscription:
+            self.message_user(request, VERIFICATION_ERROR_MSG, messages.ERROR)
+        
         return self.verify_mediator_view(request, mediator)
 
     verify_mediator.label = _('Verify')
@@ -91,9 +91,9 @@ class MediatorVerificationMixin:
 
     def decline_mediator(self, request, mediator: models.Mediator):
         """Decline mediator profile and send notification email."""
-        #if mediator.user.has_active_subscription:
-        #    self.message_user(request, VERIFICATION_ERROR_MSG, messages.ERROR)
-        return
+        if mediator.user.has_active_subscription:
+            self.message_user(request, VERIFICATION_ERROR_MSG, messages.ERROR)
+        
         mediator.decline_by_admin()
 
     decline_mediator.label = _('Decline')
@@ -331,36 +331,34 @@ class MediatorAdmin(
 
     def _subscription(self, mediator):
         """Return info about current mediator subscription."""
-        #subscription = mediator.user.active_subscription
-        return "-"
+        subscription = mediator.user.active_subscription
         return self._admin_url(subscription) if subscription else '-'
 
     _subscription.short_description = _('Subscription')
 
     def _subscription_status(self, mediator):
         """Return info about current mediator subscription status."""
-        #subscription = mediator.user.active_subscription
-        return "-"
+        subscription = mediator.user.active_subscription
         return subscription.status.capitalize() if subscription else '-'
 
     _subscription_status.short_description = _('Subscription status')
 
     def _is_paid(self, mediator):
         """Return info about current mediator subscription payment."""
-        #subscription = mediator.user.active_subscription
-        #is_paid = subscription.is_active if subscription else False
-        return 'Yes'
+        subscription = mediator.user.active_subscription
+        is_paid = subscription.is_active if subscription else False
+
         return 'Yes' if is_paid else 'No'
 
     _is_paid.short_description = _('Is subscription paid')
 
-    #def _canceled_at(self, mediator):
-    #    """Return info about current mediator subscription cancel."""
-    #    subscription = mediator.user.active_subscription
-    #    return subscription.canceled_at.date() \
-    #        if subscription.canceled_at else '-'
+    def _canceled_at(self, mediator):
+        """Return info about current mediator subscription cancel."""
+        subscription = mediator.user.active_subscription
+        return subscription.canceled_at.date() \
+            if subscription.canceled_at else '-'
 
-    #_canceled_at.short_description = _('Canceled at')
+    _canceled_at.short_description = _('Canceled at')
 
     def _firm_place_id(self, mediator):
         """Return a link to google maps, which shows location."""
