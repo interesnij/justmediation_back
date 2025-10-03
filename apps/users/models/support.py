@@ -79,10 +79,10 @@ class Support(AppUserHelperMixin, VerifiedRegistration):
             return False
         return user.pk == self.pk and self.is_verified
 
-    def _get_or_create_payment(self) -> Payment:
-        """ Создайте платеж за вознаграждение. """
-        from ..services import get_or_create_support_fee_payment
-        return get_or_create_support_fee_payment(support=self)
+    #def _get_or_create_payment(self) -> Payment:
+    #    """ Создайте платеж за вознаграждение. """
+    #    from ..services import get_or_create_support_fee_payment
+    #    return get_or_create_support_fee_payment(support=self)
 
     def _post_fail_payment_hook(self):
         """ Уведомить пользователя о несостоявшемся платеже. """
