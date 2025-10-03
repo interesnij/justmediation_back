@@ -81,7 +81,7 @@ class SupportAdmin(BaseAdmin):
     #verify_support.short_description = _('Verify profile')
 
     #def decline_support(self, request, support: models.Support):
-        """Decline support profile and send notification email."""
+    #    """Decline support profile and send notification email."""
     #    if support.is_in_progress or support.is_paid:
     #        self.message_user(request, VERIFICATION_ERROR_MSG, messages.ERROR)
     #        return
