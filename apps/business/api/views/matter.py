@@ -117,7 +117,6 @@ class MatterViewSet(BusinessViewSetMixin, views.CRUDViewSet):
         'shared_with',
         # добавьте эту предварительную выборку из-за поля `user_type`
         'shared_with__mediator',
-        'shared_with__support',
         'shared_with__client',
         'billing_item',
         'billing_item__billing_items_invoices',

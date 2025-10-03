@@ -125,8 +125,8 @@ class VideoCallSerializer(BaseSerializer):
         had_business_with = AppUser.objects.had_business_with(user=user)
         had_shared_matters_with = AppUser.objects.filter(
             Q(client__matters__shared_links__user_id=user.pk) |
-            Q(mediator__user__shared_matters__client_id=user.pk) |
-            Q(support__user__shared_matters__client_id=user.pk)
+            Q(mediator__user__shared_matters__client_id=user.pk)
+            #Q(support__user__shared_matters__client_id=user.pk)
         )
 
         fields['participants'].child_relation.queryset = AppUser.objects.filter(  # noqa

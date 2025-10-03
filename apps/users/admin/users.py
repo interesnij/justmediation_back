@@ -139,7 +139,6 @@ class AppUserAdmin(ExportMixin, UserAdmin, BaseAdmin):
     list_select_related = (
         'mediator',
         'client',
-        'support',
         'timezone',
     )
 

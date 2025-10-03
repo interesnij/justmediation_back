@@ -5,7 +5,7 @@ from .statistics import (
     get_stats_for_dashboard,
     get_stats_for_time_period_by_tag,
 )
-from .support import get_or_create_support_fee_payment
+#from .support import get_or_create_support_fee_payment
 
 __all__ = (
     'get_mediator_statistics',
@@ -13,5 +13,5 @@ __all__ = (
     'get_stats_for_time_period_by_tag',
     'get_stats_for_dashboard',
     'create_stat',
-    'get_or_create_support_fee_payment',
+    #'get_or_create_support_fee_payment',
 )

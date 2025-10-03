@@ -1,13 +1,13 @@
 from django.db import models
 from django.utils.translation import gettext_lazy as _
-from ...finance.models import AbstractPaidObject, Payment
+#from ...finance.models import AbstractPaidObject, Payment
 from .querysets import SupportQuerySet
 from .users import AppUserHelperMixin
 from .utils.verification import VerifiedRegistration
 from ...users.models.users import AppUser
 
 
-class Support(AbstractPaidObject, AppUserHelperMixin, VerifiedRegistration):
+class Support(AppUserHelperMixin, VerifiedRegistration):
     """ Модель определяет информацию о `поддержке` пользователей.
     Пользователи службы поддержки - это своего рода помощники адвоката, такие как:
 
