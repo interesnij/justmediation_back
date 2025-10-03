@@ -56,7 +56,7 @@ class SupportAdmin(BaseAdmin):
         'verification_status',
         #'payment_status',
         #'_payment',
-        '_link_to_user',
+        #'_link_to_user',
     )
     create_only_fields = (
         'user',
