@@ -1,0 +1,11 @@
+{% extends "email_base.html" %}
+{% load i18n %}
+{% block email_body %}
+{% autoescape off %}
+<tr>
+  <td style="font-family: sans-serif; font-size: 14px; vertical-align: top; text-align: left;">
+    <p>Click <a href="{{ deep_link }}">here</a> to view.</p>
+  </td>
+</tr>
+{% endautoescape %}
+{% endblock %}

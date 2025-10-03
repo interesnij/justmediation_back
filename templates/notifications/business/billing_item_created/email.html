@@ -1,0 +1,9 @@
+{% extends "notifications/base.html" %}
+
+{% load i18n %}
+
+{% block email_body %}
+<p>
+  {{ instance.matter.mediator.display_name }} has created a billing item in the matter {{instance.matter.title}}.
+</p>
+{% endblock %}

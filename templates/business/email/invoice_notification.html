@@ -1,0 +1,16 @@
+{% extends "email_base.html" %}
+
+{% load i18n %}
+{% block email_body %}
+{% autoescape off %}
+<p>
+  {% blocktrans %}Here is your invoice (it's in attached file) for matter{% endblocktrans %}
+  '{{ invoice.matter.title }}'
+</p>
+{% if note %}
+<p>{% blocktrans %}Also your mediator left a note:{% endblocktrans %}</p>
+<p>{{ note }}</p>
+{% endif %}
+<p>If you'd like to pay through the JustMediation, please go <a href="{{ deep_link }}">here</a>.</p>
+{% endautoescape %}
+{% endblock %}

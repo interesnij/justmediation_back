@@ -1,0 +1,8 @@
+DJANGO_EASY_AUDIT_WATCH_REQUEST_EVENTS = False
+DJANGO_EASY_AUDIT_WATCH_AUTH_EVENTS = False
+DJANGO_EASY_AUDIT_READONLY_EVENTS = True
+DJANGO_EASY_AUDIT_UNREGISTERED_CLASSES_EXTRA = [
+    'cities_light.Country',
+    'cities_light.Region',
+    'cities_light.City',
+]

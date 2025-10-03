@@ -1,0 +1,15 @@
+{% extends "email_base.html" %}
+
+{% load i18n %}
+{% block email_body %}
+  {% autoescape off %}
+    <h3>User requested cancel membership</h3>
+    <div style="text-align: left">
+      <p>First name: <b>{{ firstname }}</b><br/></p>
+      <p>Last name: <b>{{ lastname }}</b><br/></p>
+      <p>Email: <b>{{ email }}</b></p>
+    </div>
+    <br/>
+    <p>You can follow this <a href='{{ cancel_admin_link }}'>link</a> to cancel subscription.</p>
+  {% endautoescape %}
+{% endblock %}

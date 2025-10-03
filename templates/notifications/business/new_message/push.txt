@@ -1,0 +1,4 @@
+{% extends "notifications/base.txt" %}
+{% block content %}
+{{ instance.author.display_name  }} sent you a message "{{ instance.post.title}}"  in the matter {{instance.post.matter.title}}.
+{% endblock %}

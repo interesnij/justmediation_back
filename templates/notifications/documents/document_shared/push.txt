@@ -1,0 +1,4 @@
+{% extends "notifications/base.txt" %}
+{% block content %}
+Mediator shared file '{{ instance.title }}' for matter '{{ instance.matter }}' with you
+{% endblock %}

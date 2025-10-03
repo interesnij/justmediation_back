@@ -1,0 +1,4 @@
+{% extends "notifications/base.txt" %}
+{% block content %}
+ {{ instance.post.client.full_name }} has accepted your proposal on the {{instance.post.title}}.
+{% endblock %}

@@ -1,0 +1,9 @@
+{% extends "notifications/base.html" %}
+
+{% load i18n %}
+
+{% block email_body %}
+<p>
+  {{ instance.mediator.full_name }} has submitted a proposal on the {{instance.post.title}}.
+</p>
+{% endblock %}

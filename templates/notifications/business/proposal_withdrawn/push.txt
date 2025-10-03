@@ -1,0 +1,4 @@
+{% extends "notifications/base.txt" %}
+{% block content %}
+ {{ instance.mediator.full_name }} has withdrawn proposal he submitted on the {{instance.post.title}}.
+{% endblock %}

@@ -1,0 +1,44 @@
+{% include 'dashboard/mainhead.html' %}
+
+<link rel="stylesheet" href="/assets/libs/jsvectormap/css/jsvectormap.min.css">
+<link rel="stylesheet" href="/assets/libs/swiper/swiper-bundle.min.css">
+<link rel="stylesheet" href="/assets/libs/gridjs/theme/mermaid.min.css">
+
+</head>
+
+<body>
+    {% include 'dashboard/switcher.html' %}
+    {% include 'dashboard/loader.html' %}
+
+    <div class="page">
+        {% include 'dashboard/header.html' %}
+        {% include 'dashboard/sidebar.html' %}
+
+        <div class="main-content app-content">
+            <div class="container-fluid">
+
+                {% include 'dashboard/page-header.html' %}
+
+                {% block content %}
+                {% endblock %}
+            </div>
+        </div>
+
+        {% include 'dashboard/headersearch_modal.html' %}
+        {% include 'dashboard/right-sidebar.html' %}
+        {% include 'dashboard/footer.html' %}
+    </div>
+
+    {% include 'dashboard/commonjs.html' %}
+
+    <script src="/assets/libs/jsvectormap/js/jsvectormap.min.js"></script>
+    <script src="/assets/libs/jsvectormap/maps/world-merc.js"></script>
+    <script src="/assets/libs/apexcharts/apexcharts.min.js"></script>
+    <script src="/assets/libs/chart.js/chart.min.js"></script>
+    <script src="/assets/js/index.js"></script>
+    {% include 'dashboard/custom_switcherjs.html' %}
+    <script src="/assets/js/custom.js"></script>
+    <script src="/assets/js/main2.js"></script>
+</body>
+
+</html>

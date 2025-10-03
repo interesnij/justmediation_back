@@ -1,0 +1,6 @@
+{% extends "notifications/base.html" %}
+
+{% load i18n %}
+{% block email_body %}
+<p>A new event has been added by {{instance.mediator.display_name}}.</p>
+{% endblock %}

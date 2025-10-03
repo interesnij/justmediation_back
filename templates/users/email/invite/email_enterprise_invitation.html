@@ -1,0 +1,16 @@
+{% extends "email_base.html" %}
+
+{% load i18n %}
+{% block email_body %}
+{% autoescape off %}
+{% if invite.first_name and invite.last_name %}
+<p>{% blocktrans %}Dear{% endblocktrans %}, {{ invite.first_name }} {{ invite.last_name }}.</p>
+{% endif %}
+<p>You have been invited to join JustMediation {{ enterprise.firm_name }} team.</p>
+{% if invite.message %}
+<p>Team admin's message:</p>
+<p>{{ invite.message }}</p>
+{% endif %}
+<p>Please follow <a href="{{ invite_link }}">this link</a> to join JustMediation.</p>
+{% endautoescape %}
+{% endblock %}

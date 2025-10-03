@@ -1,0 +1,6 @@
+{% extends "notifications/base.html" %}
+
+{% load i18n %}
+{% block email_body %}
+  <p>{{instance.title}} status has been updated.</p>
+{% endblock %}

@@ -1,0 +1,4 @@
+{% extends "notifications/base.txt" %}
+{% block content %}
+A video call have started with {% for participant in other_participants %}{{participant}}{% if not forloop.last %}, {% endif %}{% endfor %}
+{% endblock %}

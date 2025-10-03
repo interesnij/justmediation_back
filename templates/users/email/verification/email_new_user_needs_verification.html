@@ -1,0 +1,15 @@
+{% extends "email_base.html" %}
+
+{% load i18n %}
+{% block email_body %}
+  {% autoescape off %}
+    <p>{% blocktrans %}New {{ user_type }} profile has been submitted by {% endblocktrans %} {{ app_user }}.</p>
+  <p>
+    {% blocktrans %}
+      Please, <a href="{{ link }}">review it</a> as soon as possible.
+    {% endblocktrans %}
+  </p>
+  {% endautoescape %}
+{% endblock %}
+
+

@@ -1,0 +1,920 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head>
+    <title>Site administration | JustMediation Administration</title>
+    <link rel="stylesheet" type="text/css" href="/static/admin/css/base.css">
+    <link rel="stylesheet" type="text/css" href="/static/admin/css/dashboard.css">
+    <meta name="viewport" content="user-scalable=no, width=device-width, initial-scale=1.0, maximum-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="/static/admin/css/responsive.css">
+    <meta name="robots" content="NONE,NOARCHIVE">
+</head>
+
+<body class=" dashboard" data-admin-utc-offset="0">
+    <div id="container">
+        <div id="header">
+            <div id="branding">
+                <h1 id="site-name"><a>JustMediation Administration</a></h1>
+            </div>
+
+            <div id="user-tools">
+                Welcome,
+                <strong>Beatrice@justmediation.ru</strong>.
+                <a href="/">View site</a> /
+                <a href="/admin/password_change/">Change password</a> /
+                <a href="/admin/logout/">Log out</a>
+            </div>
+        </div>
+
+        <div id="content" class="colMS">
+            <h1>Site administration</h1>
+            <div id="content-main">
+                <div class="app-accounting module">
+                    <table>
+                        <caption>
+                            <a href="/admin/accounting/" class="section"
+                                title="Models in the Accounting application">Accounting</a>
+                        </caption>
+                        <tr class="model-qbinvoice">
+                            <th scope="row"><a href="/admin/accounting/qbinvoice/">QuickBooks Invoices</a></th>
+                            <td><a href="/admin/accounting/qbinvoice/add/" class="addlink">Add</a></td>
+                            <td><a href="/admin/accounting/qbinvoice/" class="changelink">Change</a></td>
+                        </tr>
+                    </table>
+                </div>
+
+                <div class="app-admin module">
+                    <table>
+                        <caption>
+                            <a href="/admin/admin/" class="section"
+                                title="Models in the Administration application">Administration</a>
+                        </caption>
+                        <tr class="model-logentry">
+                            <th scope="row"><a href="/admin/admin/logentry/">Log entries</a></th>
+                            <td>&nbsp;</td>
+                            <td><a href="/admin/admin/logentry/" class="viewlink">View</a></td>
+                        </tr>
+                    </table>
+                </div>
+
+                <div class="app-business module">
+                    <table>
+                        <caption>
+                            <a href="/admin/business/" class="section"
+                                title="Models in the Business application">Business</a>
+                        </caption>
+                        <tr class="model-activity">
+                            <th scope="row"><a href="/admin/business/activity/">Activities</a></th>
+                            <td><a href="/admin/business/activity/add/" class="addlink">Add</a></td>
+                            <td><a href="/admin/business/activity/" class="changelink">Change</a></td>
+                        </tr>
+
+                        <tr class="model-billingitemattachment">
+                            <th scope="row"><a href="/admin/business/billingitemattachment/">Attached Time Billings</a>
+                            </th>
+                            <td><a href="/admin/business/billingitemattachment/add/" class="addlink">Add</a></td>
+                            <td><a href="/admin/business/billingitemattachment/" class="changelink">Change</a></td>
+                        </tr>
+
+                        <tr class="model-attachment">
+                            <th scope="row"><a href="/admin/business/attachment/">Attachments</a></th>
+                            <td><a href="/admin/business/attachment/add/" class="addlink">Add</a></td>
+                            <td><a href="/admin/business/attachment/" class="changelink">Change</a></td>
+                        </tr>
+
+                        <tr class="model-mediatorrfp">
+                            <th scope="row"><a href="/admin/business/mediatorrfp/">Mediator RFP</a></th>
+                            <td><a href="/admin/business/mediatorrfp/add/" class="addlink">Add</a></td>
+                            <td><a href="/admin/business/mediatorrfp/" class="changelink">Change</a></td>
+                        </tr>
+
+                        <tr class="model-billingitem">
+                            <th scope="row"><a href="/admin/business/billingitem/">Billing Item</a></th>
+                            <td>&nbsp;</td>
+                            <td><a href="/admin/business/billingitem/" class="viewlink">View</a></td>
+                        </tr>
+
+                        <tr class="model-checklistentry">
+                            <th scope="row"><a href="/admin/business/checklistentry/">Checklist Entries</a></th>
+                            <td><a href="/admin/business/checklistentry/add/" class="addlink">Add</a></td>
+                            <td><a href="/admin/business/checklistentry/" class="changelink">Change</a></td>
+                        </tr>
+
+                        <tr class="model-clientrfp">
+                            <th scope="row"><a href="/admin/business/clientrfp/">Client RFP</a></th>
+                            <td><a href="/admin/business/clientrfp/add/" class="addlink">Add</a></td>
+                            <td><a href="/admin/business/clientrfp/" class="changelink">Change</a></td>
+                        </tr>
+
+                        <tr class="model-invoice">
+                            <th scope="row"><a href="/admin/business/invoice/">Invoices</a></th>
+                            <td><a href="/admin/business/invoice/add/" class="addlink">Add</a></td>
+                            <td><a href="/admin/business/invoice/" class="changelink">Change</a></td>
+                        </tr>
+
+                        <tr class="model-lead">
+                            <th scope="row"><a href="/admin/business/lead/">Leads</a></th>
+                            <td><a href="/admin/business/lead/add/" class="addlink">Add</a></td>
+                            <td><a href="/admin/business/lead/" class="changelink">Change</a></td>
+                        </tr>
+
+                        <tr class="model-matter">
+                            <th scope="row"><a href="/admin/business/matter/">Matters</a></th>
+                            <td><a href="/admin/business/matter/add/" class="addlink">Add</a></td>
+                            <td><a href="/admin/business/matter/" class="changelink">Change</a></td>
+                        </tr>
+
+                        <tr class="model-mattersharedwith">
+                            <th scope="row"><a href="/admin/business/mattersharedwith/">Matters Shared With</a></th>
+                            <td><a href="/admin/business/mattersharedwith/add/" class="addlink">Add</a></td>
+                            <td><a href="/admin/business/mattersharedwith/" class="changelink">Change</a></td>
+                        </tr>
+
+                        <tr class="model-contactform">
+                            <th scope="row"><a href="/admin/business/contactform/">Messages from contact form</a></th>
+                            <td><a href="/admin/business/contactform/add/" class="addlink">Add</a></td>
+                            <td><a href="/admin/business/contactform/" class="changelink">Change</a></td>
+                        </tr>
+
+                        <tr class="model-note">
+                            <th scope="row"><a href="/admin/business/note/">Notes</a></th>
+                            <td><a href="/admin/business/note/add/" class="addlink">Add</a></td>
+                            <td><a href="/admin/business/note/" class="changelink">Change</a></td>
+                        </tr>
+
+                        <tr class="model-opportunity">
+                            <th scope="row"><a href="/admin/business/opportunity/">Opportunitys</a></th>
+                            <td><a href="/admin/business/opportunity/add/" class="addlink">Add</a></td>
+                            <td><a href="/admin/business/opportunity/" class="changelink">Change</a></td>
+                        </tr>
+
+                        <tr class="model-paymentmethods">
+                            <th scope="row"><a href="/admin/business/paymentmethods/">PaymentMethods</a></th>
+                            <td><a href="/admin/business/paymentmethods/add/" class="addlink">Add</a></td>
+                            <td><a href="/admin/business/paymentmethods/" class="changelink">Change</a></td>
+                        </tr>
+
+                        <tr class="model-postedmatter">
+                            <th scope="row"><a href="/admin/business/postedmatter/">Posted matters</a></th>
+                            <td><a href="/admin/business/postedmatter/add/" class="addlink">Add</a></td>
+                            <td><a href="/admin/business/postedmatter/" class="changelink">Change</a></td>
+                        </tr>
+
+                        <tr class="model-proposal">
+                            <th scope="row"><a href="/admin/business/proposal/">Proposals</a></th>
+                            <td><a href="/admin/business/proposal/add/" class="addlink">Add</a></td>
+                            <td><a href="/admin/business/proposal/" class="changelink">Change</a></td>
+                        </tr>
+
+                        <tr class="model-referral">
+                            <th scope="row"><a href="/admin/business/referral/">Referrals</a></th>
+                            <td><a href="/admin/business/referral/add/" class="addlink">Add</a></td>
+                            <td><a href="/admin/business/referral/" class="changelink">Change</a></td>
+                        </tr>
+
+                        <tr class="model-stage">
+                            <th scope="row"><a href="/admin/business/stage/">Stages</a></th>
+                            <td><a href="/admin/business/stage/add/" class="addlink">Add</a></td>
+                            <td><a href="/admin/business/stage/" class="changelink">Change</a></td>
+                        </tr>
+
+                        <tr class="model-voiceconsent">
+                            <th scope="row"><a href="/admin/business/voiceconsent/">Voice Consents</a></th>
+                            <td><a href="/admin/business/voiceconsent/add/" class="addlink">Add</a></td>
+                            <td><a href="/admin/business/voiceconsent/" class="changelink">Change</a></td>
+                        </tr>
+
+                    </table>
+                </div>
+
+                <div class="app-cities_light module">
+                    <table>
+                        <caption>
+                            <a href="/admin/cities_light/" class="section"
+                                title="Models in the Cities_Light application">Cities_Light</a>
+                        </caption>
+                        <tr class="model-city">
+                            <th scope="row"><a href="/admin/cities_light/city/">Cities</a></th>
+                            <td><a href="/admin/cities_light/city/add/" class="addlink">Add</a></td>
+                            <td><a href="/admin/cities_light/city/" class="changelink">Change</a></td>
+                        </tr>
+
+                        <tr class="model-country">
+                            <th scope="row"><a href="/admin/cities_light/country/">Countries</a></th>
+                            <td><a href="/admin/cities_light/country/add/" class="addlink">Add</a></td>
+                            <td><a href="/admin/cities_light/country/" class="changelink">Change</a></td>
+                        </tr>
+
+                        <tr class="model-region">
+                            <th scope="row"><a href="/admin/cities_light/region/">Regions/states</a></th>
+                            <td><a href="/admin/cities_light/region/add/" class="addlink">Add</a></td>
+                            <td><a href="/admin/cities_light/region/" class="changelink">Change</a></td>
+                        </tr>
+                    </table>
+                </div>
+
+                <div class="app-constance module">
+                    <table>
+                        <caption>
+                            <a href="/admin/constance/" class="section"
+                                title="Models in the Constance application">Constance</a>
+                        </caption>
+
+                        <tr class="model-config">
+                            <th scope="row"><a href="/admin/constance/config/">Config</a></th>
+                            <td>&nbsp;</td>
+                            <td><a href="/admin/constance/config/" class="changelink">Change</a></td>
+                        </tr>
+
+                    </table>
+                </div>
+
+                <div class="app-documents module">
+                    <table>
+                        <caption>
+                            <a href="/admin/documents/" class="section"
+                                title="Models in the Documents application">Documents</a>
+                        </caption>
+
+                        <tr class="model-document">
+                            <th scope="row"><a href="/admin/documents/document/">Documents</a></th>
+                            <td><a href="/admin/documents/document/add/" class="addlink">Add</a></td>
+                            <td><a href="/admin/documents/document/" class="changelink">Change</a></td>
+                        </tr>
+
+                        <tr class="model-folder">
+                            <th scope="row"><a href="/admin/documents/folder/">Folders</a></th>
+                            <td><a href="/admin/documents/folder/add/" class="addlink">Add</a></td>
+                            <td><a href="/admin/documents/folder/" class="changelink">Change</a></td>
+                        </tr>
+
+                    </table>
+                </div>
+
+                <div class="app-easyaudit module">
+                    <table>
+                        <caption>
+                            <a href="/admin/easyaudit/" class="section"
+                                title="Models in the Easy Audit Application application">Easy Audit Application</a>
+                        </caption>
+
+                        <tr class="model-crudevent">
+                            <th scope="row"><a href="/admin/easyaudit/crudevent/">CRUD events</a></th>
+                            <td>&nbsp;</td>
+                            <td><a href="/admin/easyaudit/crudevent/" class="changelink">Change</a></td>
+                        </tr>
+
+                        <tr class="model-loginevent">
+                            <th scope="row"><a href="/admin/easyaudit/loginevent/">Login events</a></th>
+                            <td>&nbsp;</td>
+                            <td><a href="/admin/easyaudit/loginevent/" class="changelink">Change</a></td>
+                        </tr>
+
+                        <tr class="model-requestevent">
+                            <th scope="row"><a href="/admin/easyaudit/requestevent/">Request events</a></th>
+                            <td>&nbsp;</td>
+                            <td><a href="/admin/easyaudit/requestevent/" class="changelink">Change</a></td>
+                        </tr>
+
+                    </table>
+                </div>
+
+                <div class="app-esign module">
+                    <table>
+                        <caption>
+                            <a href="/admin/esign/" class="section" title="Models in the ESign application">ESign</a>
+                        </caption>
+
+                        <tr class="model-esigndocument">
+                            <th scope="row"><a href="/admin/esign/esigndocument/">ESign Documents</a></th>
+                            <td><a href="/admin/esign/esigndocument/add/" class="addlink">Add</a></td>
+                            <td><a href="/admin/esign/esigndocument/" class="changelink">Change</a></td>
+                        </tr>
+
+                        <tr class="model-esignprofile">
+                            <th scope="row"><a href="/admin/esign/esignprofile/">ESign Profiles</a></th>
+                            <td><a href="/admin/esign/esignprofile/add/" class="addlink">Add</a></td>
+                            <td><a href="/admin/esign/esignprofile/" class="changelink">Change</a></td>
+                        </tr>
+
+                        <tr class="model-envelope">
+                            <th scope="row"><a href="/admin/esign/envelope/">Envelopes</a></th>
+                            <td><a href="/admin/esign/envelope/add/" class="addlink">Add</a></td>
+                            <td><a href="/admin/esign/envelope/" class="changelink">Change</a></td>
+                        </tr>
+
+                    </table>
+                </div>
+
+                <div class="app-fcm_django module">
+                    <table>
+                        <caption>
+                            <a href="/admin/fcm_django/" class="section"
+                                title="Models in the FCM Django application">FCM Django</a>
+                        </caption>
+
+                        <tr class="model-fcmdevice">
+                            <th scope="row"><a href="/admin/fcm_django/fcmdevice/">FCM devices</a></th>
+                            <td>&nbsp;</td>
+                            <td><a href="/admin/fcm_django/fcmdevice/" class="viewlink">View</a></td>
+                        </tr>
+
+                    </table>
+                </div>
+
+                <div class="app-finance module">
+                    <table>
+                        <caption>
+                            <a href="/admin/finance/" class="section"
+                                title="Models in the Finance application">Finance</a>
+                        </caption>
+
+                        <tr class="model-accountproxy">
+                            <th scope="row"><a href="/admin/finance/accountproxy/">Account proxys</a></th>
+                            <td>&nbsp;</td>
+                            <td><a href="/admin/finance/accountproxy/" class="viewlink">View</a></td>
+                        </tr>
+
+                        <tr class="model-customerproxy">
+                            <th scope="row"><a href="/admin/finance/customerproxy/">Customers</a></th>
+                            <td>&nbsp;</td>
+                            <td><a href="/admin/finance/customerproxy/" class="viewlink">View</a></td>
+                        </tr>
+
+                        <tr class="model-paymentintentproxy">
+                            <th scope="row"><a href="/admin/finance/paymentintentproxy/">Payment intent proxys</a></th>
+                            <td>&nbsp;</td>
+                            <td><a href="/admin/finance/paymentintentproxy/" class="viewlink">View</a></td>
+                        </tr>
+
+                        <tr class="model-payment">
+                            <th scope="row"><a href="/admin/finance/payment/">Payments</a></th>
+                            <td>&nbsp;</td>
+                            <td><a href="/admin/finance/payment/" class="viewlink">View</a></td>
+                        </tr>
+
+                        <tr class="model-planproxy">
+                            <th scope="row"><a href="/admin/finance/planproxy/">Plans</a></th>
+                            <td>&nbsp;</td>
+                            <td><a href="/admin/finance/planproxy/" class="viewlink">View</a></td>
+                        </tr>
+
+                        <tr class="model-productproxy">
+                            <th scope="row"><a href="/admin/finance/productproxy/">Product proxys</a></th>
+                            <td>&nbsp;</td>
+                            <td><a href="/admin/finance/productproxy/" class="viewlink">View</a></td>
+                        </tr>
+
+                        <tr class="model-subscriptionproxy">
+                            <th scope="row"><a href="/admin/finance/subscriptionproxy/">Subscriptions</a></th>
+                            <td>&nbsp;</td>
+                            <td><a href="/admin/finance/subscriptionproxy/" class="viewlink">View</a></td>
+                        </tr>
+                    </table>
+                </div>
+
+                <div class="app-forums module">
+                    <table>
+                        <caption>
+                            <a href="/admin/forums/" class="section" title="Models in the Forums application">Forums</a>
+                        </caption>
+
+                        <tr class="model-comment">
+                            <th scope="row"><a href="/admin/forums/comment/">Comments</a></th>
+                            <td><a href="/admin/forums/comment/add/" class="addlink">Add</a></td>
+                            <td><a href="/admin/forums/comment/" class="changelink">Change</a></td>
+                        </tr>
+
+                        <tr class="model-followedpost">
+                            <th scope="row"><a href="/admin/forums/followedpost/">Followers of Posts</a></th>
+                            <td><a href="/admin/forums/followedpost/add/" class="addlink">Add</a></td>
+                            <td><a href="/admin/forums/followedpost/" class="changelink">Change</a></td>
+                        </tr>
+
+                        <tr class="model-post">
+                            <th scope="row"><a href="/admin/forums/post/">Posts</a></th>
+                            <td><a href="/admin/forums/post/add/" class="addlink">Add</a></td>
+                            <td><a href="/admin/forums/post/" class="changelink">Change</a></td>
+                        </tr>
+
+                        <tr class="model-forumpracticeareas">
+                            <th scope="row"><a href="/admin/forums/forumpracticeareas/">Practice areas</a></th>
+                            <td><a href="/admin/forums/forumpracticeareas/add/" class="addlink">Add</a></td>
+                            <td><a href="/admin/forums/forumpracticeareas/" class="changelink">Change</a></td>
+                        </tr>
+
+                        <tr class="model-topic">
+                            <th scope="row"><a href="/admin/forums/topic/">Topics</a></th>
+                            <td><a href="/admin/forums/topic/add/" class="addlink">Add</a></td>
+                            <td><a href="/admin/forums/topic/" class="changelink">Change</a></td>
+                        </tr>
+
+                        <tr class="model-userstats">
+                            <th scope="row"><a href="/admin/forums/userstats/">Users Stats</a></th>
+                            <td><a href="/admin/forums/userstats/add/" class="addlink">Add</a></td>
+                            <td><a href="/admin/forums/userstats/" class="changelink">Change</a></td>
+                        </tr>
+
+                    </table>
+                </div>
+
+                <div class="app-news module">
+                    <table>
+                        <caption>
+                            <a href="/admin/news/" class="section" title="Models in the News application">News</a>
+                        </caption>
+
+                        <tr class="model-newscategory">
+                            <th scope="row"><a href="/admin/news/newscategory/">Categories</a></th>
+                            <td><a href="/admin/news/newscategory/add/" class="addlink">Add</a></td>
+                            <td><a href="/admin/news/newscategory/" class="changelink">Change</a></td>
+                        </tr>
+
+                        <tr class="model-news">
+                            <th scope="row"><a href="/admin/news/news/">News</a></th>
+                            <td><a href="/admin/news/news/add/" class="addlink">Add</a></td>
+                            <td><a href="/admin/news/news/" class="changelink">Change</a></td>
+                        </tr>
+
+                        <tr class="model-newstag">
+                            <th scope="row"><a href="/admin/news/newstag/">Tags</a></th>
+                            <td><a href="/admin/news/newstag/add/" class="addlink">Add</a></td>
+                            <td><a href="/admin/news/newstag/" class="changelink">Change</a></td>
+                        </tr>
+                    </table>
+                </div>
+
+                <div class="app-notifications module">
+                    <table>
+                        <caption>
+                            <a href="/admin/notifications/" class="section"
+                                title="Models in the Notifications application">Notifications</a>
+                        </caption>
+
+                        <tr class="model-notificationdispatch">
+                            <th scope="row"><a href="/admin/notifications/notificationdispatch/">Notification
+                                    dispatches</a></th>
+                            <td><a href="/admin/notifications/notificationdispatch/add/" class="addlink">Add</a></td>
+                            <td><a href="/admin/notifications/notificationdispatch/" class="changelink">Change</a></td>
+                        </tr>
+
+                        <tr class="model-notificationgroup">
+                            <th scope="row"><a href="/admin/notifications/notificationgroup/">Notification groups</a>
+                            </th>
+                            <td><a href="/admin/notifications/notificationgroup/add/" class="addlink">Add</a></td>
+                            <td><a href="/admin/notifications/notificationgroup/" class="changelink">Change</a></td>
+                        </tr>
+
+                        <tr class="model-notificationsetting">
+                            <th scope="row"><a href="/admin/notifications/notificationsetting/">Notification
+                                    settings</a></th>
+                            <td><a href="/admin/notifications/notificationsetting/add/" class="addlink">Add</a></td>
+                            <td><a href="/admin/notifications/notificationsetting/" class="changelink">Change</a></td>
+                        </tr>
+
+                        <tr class="model-notificationtype">
+                            <th scope="row"><a href="/admin/notifications/notificationtype/">Notification types</a></th>
+                            <td><a href="/admin/notifications/notificationtype/add/" class="addlink">Add</a></td>
+                            <td><a href="/admin/notifications/notificationtype/" class="changelink">Change</a></td>
+                        </tr>
+
+                        <tr class="model-notification">
+                            <th scope="row"><a href="/admin/notifications/notification/">Notifications</a></th>
+                            <td><a href="/admin/notifications/notification/add/" class="addlink">Add</a></td>
+                            <td><a href="/admin/notifications/notification/" class="changelink">Change</a></td>
+                        </tr>
+                    </table>
+                </div>
+
+                <div class="app-django_celery_beat module">
+                    <table>
+                        <caption>
+                            <a href="/admin/django_celery_beat/" class="section"
+                                title="Models in the Periodic Tasks application">Periodic Tasks</a>
+                        </caption>
+
+                        <tr class="model-clockedschedule">
+                            <th scope="row"><a href="/admin/django_celery_beat/clockedschedule/">Clocked</a></th>
+                            <td>&nbsp;</td>
+                            <td><a href="/admin/django_celery_beat/clockedschedule/" class="viewlink">View</a></td>
+                        </tr>
+
+                        <tr class="model-crontabschedule">
+                            <th scope="row"><a href="/admin/django_celery_beat/crontabschedule/">Crontabs</a></th>
+                            <td>&nbsp;</td>
+                            <td><a href="/admin/django_celery_beat/crontabschedule/" class="viewlink">View</a></td>
+                        </tr>
+
+                        <tr class="model-intervalschedule">
+                            <th scope="row"><a href="/admin/django_celery_beat/intervalschedule/">Intervals</a></th>
+                            <td>&nbsp;</td>
+                            <td><a href="/admin/django_celery_beat/intervalschedule/" class="viewlink">View</a></td>
+                        </tr>
+
+                        <tr class="model-periodictask">
+                            <th scope="row"><a href="/admin/django_celery_beat/periodictask/">Periodic tasks</a></th>
+                            <td>&nbsp;</td>
+                            <td><a href="/admin/django_celery_beat/periodictask/" class="viewlink">View</a></td>
+                        </tr>
+
+                        <tr class="model-solarschedule">
+                            <th scope="row"><a href="/admin/django_celery_beat/solarschedule/">Solar events</a></th>
+                            <td>&nbsp;</td>
+                            <td><a href="/admin/django_celery_beat/solarschedule/" class="viewlink">View</a></td>
+                        </tr>
+
+                    </table>
+                </div>
+
+                <div class="app-promotion module">
+                    <table>
+                        <caption>
+                            <a href="/admin/promotion/" class="section"
+                                title="Models in the Promotion application">Promotion</a>
+                        </caption>
+
+                        <tr class="model-event">
+                            <th scope="row"><a href="/admin/promotion/event/">Events</a></th>
+                            <td><a href="/admin/promotion/event/add/" class="addlink">Add</a></td>
+                            <td><a href="/admin/promotion/event/" class="changelink">Change</a></td>
+                        </tr>
+                    </table>
+                </div>
+
+                <div class="app-rest_framework_tracking module">
+                    <table>
+                        <caption>
+                            <a href="/admin/rest_framework_tracking/" class="section"
+                                title="Models in the REST Framework Tracking application">REST Framework
+                                Tracking</a>
+                        </caption>
+
+                        <tr class="model-apirequestlog">
+                            <th scope="row"><a href="/admin/rest_framework_tracking/apirequestlog/">API Request Logs</a>
+                            </th>
+                            <td><a href="/admin/rest_framework_tracking/apirequestlog/add/" class="addlink">Add</a></td>
+                            <td><a href="/admin/rest_framework_tracking/apirequestlog/" class="changelink">Change</a>
+                            </td>
+                        </tr>
+
+                    </table>
+                </div>
+
+                <div class="app-sites module">
+                    <table>
+                        <caption>
+                            <a href="/admin/sites/" class="section" title="Models in the Sites application">Sites</a>
+                        </caption>
+
+                        <tr class="model-site">
+                            <th scope="row"><a href="/admin/sites/site/">Sites</a></th>
+                            <td><a href="/admin/sites/site/add/" class="addlink">Add</a></td>
+                            <td><a href="/admin/sites/site/" class="changelink">Change</a></td>
+                        </tr>
+
+                    </table>
+                </div>
+
+                <div class="app-social module">
+                    <table>
+                        <caption>
+                            <a href="/admin/social/" class="section" title="Models in the Social application">Social</a>
+                        </caption>
+                        <tr class="model-chats">
+                            <th scope="row"><a href="/admin/social/chats/">Chats</a></th>
+                            <td><a href="/admin/social/chats/add/" class="addlink">Add</a></td>
+                            <td><a href="/admin/social/chats/" class="changelink">Change</a></td>
+                        </tr>
+
+                        <tr class="model-messageattachment">
+                            <th scope="row"><a href="/admin/social/messageattachment/">Message attachments</a></th>
+                            <td><a href="/admin/social/messageattachment/add/" class="addlink">Add</a></td>
+                            <td><a href="/admin/social/messageattachment/" class="changelink">Change</a></td>
+                        </tr>
+
+                        <tr class="model-message">
+                            <th scope="row"><a href="/admin/social/message/">Messages</a></th>
+                            <td><a href="/admin/social/message/add/" class="addlink">Add</a></td>
+                            <td><a href="/admin/social/message/" class="changelink">Change</a></td>
+                        </tr>
+
+                        <tr class="model-mediatorpost">
+                            <th scope="row"><a href="/admin/social/mediatorpost/">Posts</a></th>
+                            <td><a href="/admin/social/mediatorpost/add/" class="addlink">Add</a></td>
+                            <td><a href="/admin/social/mediatorpost/" class="changelink">Change</a></td>
+                        </tr>
+
+                    </table>
+                </div>
+
+                <div class="app-users module">
+                    <table>
+                        <caption>
+                            <a href="/admin/users/" class="section" title="Models in the Users application">Users</a>
+                        </caption>
+
+                        <tr class="model-appuser">
+                            <th scope="row"><a href="/admin/users/appuser/">AppUsers</a></th>
+                            <td><a href="/admin/users/appuser/add/" class="addlink">Add</a></td>
+                            <td><a href="/admin/users/appuser/" class="changelink">Change</a></td>
+                        </tr>
+
+                        <tr class="model-appointmenttype">
+                            <th scope="row"><a href="/admin/users/appointmenttype/">Appointment Type</a></th>
+                            <td><a href="/admin/users/appointmenttype/add/" class="addlink">Add</a></td>
+                            <td><a href="/admin/users/appointmenttype/" class="changelink">Change</a></td>
+                        </tr>
+
+                        <tr class="model-mediatoruniversity">
+                            <th scope="row"><a href="/admin/users/mediatoruniversity/">Mediator Universities</a></th>
+                            <td><a href="/admin/users/mediatoruniversity/add/" class="addlink">Add</a></td>
+                            <td><a href="/admin/users/mediatoruniversity/" class="changelink">Change</a></td>
+                        </tr>
+
+                        <tr class="model-mediator">
+                            <th scope="row"><a href="/admin/users/mediator/">Mediators</a></th>
+                            <td><a href="/admin/users/mediator/add/" class="addlink">Add</a></td>
+                            <td><a href="/admin/users/mediator/" class="changelink">Change</a></td>
+                        </tr>
+
+                        <tr class="model-mediatoreducation">
+                            <th scope="row"><a href="/admin/users/mediatoreducation/">Mediators&#x27; education</a></th>
+                            <td><a href="/admin/users/mediatoreducation/add/" class="addlink">Add</a></td>
+                            <td><a href="/admin/users/mediatoreducation/" class="changelink">Change</a></td>
+                        </tr>
+
+                        <tr class="model-client">
+                            <th scope="row"><a href="/admin/users/client/">Clients</a></th>
+                            <td><a href="/admin/users/client/add/" class="addlink">Add</a></td>
+                            <td><a href="/admin/users/client/" class="changelink">Change</a></td>
+                        </tr>
+
+                        <tr class="model-currencies">
+                            <th scope="row"><a href="/admin/users/currencies/">Currencies</a></th>
+                            <td><a href="/admin/users/currencies/add/" class="addlink">Add</a></td>
+                            <td><a href="/admin/users/currencies/" class="changelink">Change</a></td>
+                        </tr>
+
+                        <tr class="model-enterprise">
+                            <th scope="row"><a href="/admin/users/enterprise/">Enterprise</a></th>
+                            <td><a href="/admin/users/enterprise/add/" class="addlink">Add</a></td>
+                            <td><a href="/admin/users/enterprise/" class="changelink">Change</a></td>
+                        </tr>
+
+                        <tr class="model-enterprisemembers">
+                            <th scope="row"><a href="/admin/users/enterprisemembers/">Enterprise memberss</a></th>
+                            <td><a href="/admin/users/enterprisemembers/add/" class="addlink">Add</a></td>
+                            <td><a href="/admin/users/enterprisemembers/" class="changelink">Change</a></td>
+                        </tr>
+
+                        <tr class="model-feekind">
+                            <th scope="row"><a href="/admin/users/feekind/">Fee Kinds</a></th>
+                            <td><a href="/admin/users/feekind/add/" class="addlink">Add</a></td>
+                            <td><a href="/admin/users/feekind/" class="changelink">Change</a></td>
+                        </tr>
+
+                        <tr class="model-firmlocation">
+                            <th scope="row"><a href="/admin/users/firmlocation/">FirmLocation</a></th>
+                            <td><a href="/admin/users/firmlocation/add/" class="addlink">Add</a></td>
+                            <td><a href="/admin/users/firmlocation/" class="changelink">Change</a></td>
+                        </tr>
+
+                        <tr class="model-firmsize">
+                            <th scope="row"><a href="/admin/users/firmsize/">Firmsize</a></th>
+                            <td><a href="/admin/users/firmsize/add/" class="addlink">Add</a></td>
+                            <td><a href="/admin/users/firmsize/" class="changelink">Change</a></td>
+                        </tr>
+
+                        <tr class="model-invite">
+                            <th scope="row"><a href="/admin/users/invite/">Invitations</a></th>
+                            <td><a href="/admin/users/invite/add/" class="addlink">Add</a></td>
+                            <td><a href="/admin/users/invite/" class="changelink">Change</a></td>
+                        </tr>
+
+                        <tr class="model-jurisdiction">
+                            <th scope="row"><a href="/admin/users/jurisdiction/">Jurisdiction</a></th>
+                            <td><a href="/admin/users/jurisdiction/add/" class="addlink">Add</a></td>
+                            <td><a href="/admin/users/jurisdiction/" class="changelink">Change</a></td>
+                        </tr>
+
+                        <tr class="model-language">
+                            <th scope="row"><a href="/admin/users/language/">Language</a></th>
+                            <td><a href="/admin/users/language/add/" class="addlink">Add</a></td>
+                            <td><a href="/admin/users/language/" class="changelink">Change</a></td>
+                        </tr>
+
+                        <tr class="model-lawfirm">
+                            <th scope="row"><a href="/admin/users/lawfirm/">Law Firms</a></th>
+                            <td><a href="/admin/users/lawfirm/add/" class="addlink">Add</a></td>
+                            <td><a href="/admin/users/lawfirm/" class="changelink">Change</a></td>
+                        </tr>
+
+                        <tr class="model-member">
+                            <th scope="row"><a href="/admin/users/member/">Members</a></th>
+                            <td><a href="/admin/users/member/add/" class="addlink">Add</a></td>
+                            <td><a href="/admin/users/member/" class="changelink">Change</a></td>
+                        </tr>
+
+                        <tr class="model-paymenttype">
+
+                            <th scope="row"><a href="/admin/users/paymenttype/">Payment Type</a></th>
+
+                            <td><a href="/admin/users/paymenttype/add/" class="addlink">Add</a></td>
+
+                            <td><a href="/admin/users/paymenttype/" class="changelink">Change</a></td>
+
+                        </tr>
+
+                        <tr class="model-speciality">
+
+                            <th scope="row"><a href="/admin/users/speciality/">Specialities</a></th>
+
+                            <td><a href="/admin/users/speciality/add/" class="addlink">Add</a></td>
+
+                            <td><a href="/admin/users/speciality/" class="changelink">Change</a></td>
+
+                        </tr>
+
+                        <tr class="model-userstatistic">
+
+                            <th scope="row"><a href="/admin/users/userstatistic/">User statistics</a></th>
+
+                            <td><a href="/admin/users/userstatistic/add/" class="addlink">Add</a></td>
+
+                            <td><a href="/admin/users/userstatistic/" class="changelink">Change</a></td>
+
+                        </tr>
+
+                    </table>
+                </div>
+
+            </div>
+
+            <div id="content-related">
+                <div class="module">
+                    <h2> Jus-Law app statistics </h2>
+                    <h3>User statistics</h3>
+
+                    <p>Verified mediators: {{ verified_count }}</p>
+
+                    <p>Awaiting verification mediators: 3</p>
+
+                    <p>Mediators: {{ mediators_total_count }}</p>
+
+                    <p>Clients: {{ clients_count }}</p>
+
+                    <p>Total: {{ total_count }}</p>
+
+                    <h3>Business statistics</h3>
+
+                    <p>Open matters: 3</p>
+
+                    <p>Referred matters: 0</p>
+
+                    <p>Closed matters: 0</p>
+
+                    <p>Total matters count: 3</p>
+
+                    <p>Active leads: 3</p>
+
+                    <p>Converted leads: 0</p>
+
+                    <p>Total leads count: 3</p>
+
+                    <h3>Forums statistics</h3>
+
+                    <p>Topics count: 45</p>
+
+                    <p>Posts count: 4</p>
+
+                    <h3>
+                        <a href="/admin/export_dashboard_statistics" class="button" role="button" download>
+                            Export statistics
+                        </a>
+                    </h3>
+                </div>
+
+                <div class="module" id="recent-actions-module">
+                    <h2>Recent actions</h2>
+                    <h3>My actions</h3>
+
+                    <ul class="actionlist">
+
+                        <li class="addlink">
+
+                            <a href="/admin/users/speciality/103/change/">Insurance</a>
+
+                            <br>
+
+                            <span class="mini quiet">Users | Speciality</span>
+
+                        </li>
+
+                        <li class="addlink">
+
+                            <a href="/admin/users/speciality/102/change/">Structured Finance</a>
+
+                            <br>
+
+                            <span class="mini quiet">Users | Speciality</span>
+
+                        </li>
+
+                        <li class="addlink">
+
+                            <a href="/admin/users/speciality/101/change/">Workplace Culture and Civil Rights/Racial
+                                Equity Audits</a>
+
+                            <br>
+
+                            <span class="mini quiet">Users | Speciality</span>
+
+                        </li>
+
+                        <li class="addlink">
+
+                            <a href="/admin/users/speciality/100/change/">White Collar Defense and Investigations</a>
+
+                            <br>
+
+                            <span class="mini quiet">Users | Speciality</span>
+
+                        </li>
+
+                        <li class="addlink">
+
+                            <a href="/admin/users/speciality/99/change/">Securities and Commodities Enforcement</a>
+
+                            <br>
+
+                            <span class="mini quiet">Users | Speciality</span>
+
+                        </li>
+
+                        <li class="addlink">
+
+                            <a href="/admin/users/speciality/98/change/">Life Sciences Compliance Counseling and
+                                Enforcement Defense</a>
+
+                            <br>
+
+                            <span class="mini quiet">Users | Speciality</span>
+
+                        </li>
+
+                        <li class="addlink">
+
+                            <a href="/admin/users/speciality/97/change/">False Claims Act Defense</a>
+
+                            <br>
+
+                            <span class="mini quiet">Users | Speciality</span>
+
+                        </li>
+
+                        <li class="addlink">
+
+                            <a href="/admin/users/speciality/96/change/">Export Controls Enforcement</a>
+
+                            <br>
+
+                            <span class="mini quiet">Users | Speciality</span>
+
+                        </li>
+
+                        <li class="addlink">
+
+                            <a href="/admin/users/speciality/95/change/">Energy Regulatory Enforcement</a>
+
+                            <br>
+
+                            <span class="mini quiet">Users | Speciality</span>
+
+                        </li>
+
+                        <li class="addlink">
+
+                            <a href="/admin/users/speciality/94/change/">Economic Sanctions Enforcement</a>
+
+                            <br>
+
+                            <span class="mini quiet">Users | Speciality</span>
+
+                        </li>
+
+                    </ul>
+
+                </div>
+            </div>
+
+            <br class="clear">
+        </div>
+        <!-- END Content -->
+
+        <div id="footer"></div>
+    </div>
+    <!-- END Container -->
+
+</body>
+
+</html>

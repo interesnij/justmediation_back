@@ -1,0 +1,10 @@
+{% extends "notifications/base.html" %}
+
+{% load i18n %}
+{% block email_body %}
+{% if recipient.is_mediator %}
+<p>{{ instance.client.display_name }} sent you a new chat.</p>
+{% elif recipient.is_client %}
+<p>You have received a new chat from {{ instance.mediator.display_name }}.</p>
+{% endif %}
+{% endblock %}

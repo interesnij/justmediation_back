@@ -1,0 +1,10 @@
+{% extends "email_base.html" %}
+
+{% load i18n %}
+{% block email_body %}
+  {% autoescape off %}
+    <p>Your Stripe account for Direct Deposits has been verified.</p>
+    <p>Now you can accept direct payments from your clients.</p>
+    <p>You can follow this <a href='{{ stripe_account_url }}'>link</a> to check out your information.</p>
+  {% endautoescape %}
+{% endblock %}

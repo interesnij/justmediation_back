@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="container" style="margin-top: 0.5em">
+    <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
+        {% for changelog in changelogs %}
+            <li class="nav-item">
+                <a class="nav-link {% if forloop.first %} active {% endif %}"
+                   id="pills-{{changelog.name}}-tab"
+                   data-toggle="pill"
+                   href="#pills-{{changelog.name}}"
+                   role="tab"
+                   aria-controls="pills-{{changelog.name}}"
+                   aria-selected="true">
+                    {{changelog.name}} version {{changelog.version}}
+                </a>
+            </li>
+        {% endfor %}
+    </ul>
+    <div class="tab-content" id="pills-tabContent">
+        {% for changelog in changelogs %}
+            <div class="tab-pane fade show {% if forloop.first %} active {% endif %}"
+                 id="pills-{{changelog.name}}"
+                 role="tabpanel"
+                 aria-labelledby="pills-{{changelog.name}}-tab">
+              {% if env != 'production' %}
+                <h5><a href="{{changelog.swagger_url}}">Open Swagger spec</a></h5>
+                <h5><a href="{{changelog.docs_url}}" target="blank">Show changelog</a></h5>
+              {% endif %}
+              {{changelog.text|safe}}
+            </div>
+        {% endfor %}
+    </div>
+</div>
+{% endblock content %}

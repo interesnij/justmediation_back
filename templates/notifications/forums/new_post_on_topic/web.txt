@@ -1,0 +1,4 @@
+{% extends "notifications/base.txt" %}
+{% block content %}
+There is new post in topic '{{ instance.topic.title }}' you follow.
+{% endblock %}

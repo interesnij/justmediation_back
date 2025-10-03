@@ -1,0 +1,4 @@
+{% extends "notifications/base.txt" %}
+{% block content %}
+{{name}} is shared with you
+{% endblock %}

@@ -1,0 +1,518 @@
+{% extends "dashboard/base.html" %}
+{% block title %}Главная страница{% endblock %}
+
+{% block content %}
+
+<div class="row">
+    <div class="col-lg-6 col-md-6 col-sm-12 col-xxl-3">
+        <div class="card overflow-hidden">
+            <div class="card-body">
+                <div class="d-flex">
+                    <div class="mt-2">
+                        <h6 class="fw-normal">Verified mediators</h6>
+                        <h2 class="mb-0 text-dark fw-semibold">{{ verified_count }}</h2>
+                    </div>
+                    <div class="ms-auto">
+                        <div class="chart-wrapper mt-1">
+                            <canvas id="saleschart" class="chart-dropshadow"></canvas>
+                        </div>
+                    </div>
+                </div>
+                <span class="text-muted fs-12">
+                    <span class="text-secondary">
+                        <i class="fe fe-arrow-up-circle text-secondary"></i> 5%
+                    </span>Last week
+                </span>
+            </div>
+        </div>
+    </div>
+    <div class="col-lg-6 col-md-6 col-sm-12 col-xxl-3">
+        <div class="card overflow-hidden">
+            <div class="card-body">
+                <div class="d-flex">
+                    <div class="mt-2">
+                        <h6 class="fw-normal">Mediators</h6>
+                        <h2 class="mb-0 text-dark fw-semibold">{{ mediators_total_count }}</h2>
+                    </div>
+                    <div class="ms-auto">
+                        <div class="chart-wrapper mt-1">
+                            <canvas id="leadschart" class="chart-dropshadow"></canvas>
+                        </div>
+                    </div>
+                </div>
+                <span class="text-muted fs-12"><span class="text-pink"><i class="fe fe-arrow-down-circle text-pink"></i>
+                        0.75%</span>
+                    Last 6 days</span>
+            </div>
+        </div>
+    </div>
+    <div class="col-lg-6 col-md-6 col-sm-12 col-xxl-3">
+        <div class="card overflow-hidden">
+            <div class="card-body">
+                <div class="d-flex">
+                    <div class="mt-2">
+                        <h6 class="fw-normal">Clients</h6>
+                        <h2 class="mb-0 text-dark fw-semibold">{{ clients_count }}</h2>
+                    </div>
+                    <div class="ms-auto">
+                        <div class="chart-wrapper mt-1">
+                            <canvas id="profitchart" class="chart-dropshadow"></canvas>
+                        </div>
+                    </div>
+                </div>
+                <span class="text-muted fs-12"><span class="text-green"><i class="fe fe-arrow-up-circle text-green"></i>
+                        0.9%</span>
+                    Last 9 days</span>
+            </div>
+        </div>
+    </div>
+    <div class="col-lg-6 col-md-6 col-sm-12 col-xxl-3">
+        <div class="card overflow-hidden">
+            <div class="card-body">
+                <div class="d-flex">
+                    <div class="mt-2">
+                        <h6 class="fw-normal">Total Users</h6>
+                        <h2 class="mb-0 text-dark fw-semibold">{{ total_count }}</h2>
+                    </div>
+                    <div class="ms-auto">
+                        <div class="chart-wrapper mt-1">
+                            <canvas id="costchart" class="chart-dropshadow"></canvas>
+                        </div>
+                    </div>
+                </div>
+                <span class="text-muted fs-12"><span class="text-warning"><i
+                            class="fe fe-arrow-up-circle text-warning"></i> 0.6%</span>
+                    Last year</span>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- ROW-1 END -->
+
+<!-- ROW-2 -->
+<div class="row">
+    <div class="col-xxl-9">
+        <div class="card overflow-hidden">
+            <div class="card-header">
+                <h3 class="card-title">Sales Analytics</h3>
+            </div>
+            <div class="card-body">
+                <div class="d-flex mx-auto text-center justify-content-center mb-4">
+                    <div class="d-flex text-center justify-content-center me-3"><span
+                            class="dot-label bg-primary my-auto"></span>Total Sales</div>
+                    <div class="d-flex text-center justify-content-center"><span
+                            class="dot-label bg-secondary my-auto"></span>Total Orders</div>
+                </div>
+                <div class="chartjs-wrapper-demo w-100">
+                    <canvas id="transactions" class="chart-dropshadow w-100"></canvas>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- COL END -->
+    <div class="col-xxl-3">
+        <div class="card overflow-hidden">
+            <div class="card-body pb-0 bg-recentorder">
+                <h3 class="card-title text-fixed-white mb-4">Recent Orders</h3>
+                <div class="chartjs-wrapper-demo">
+                    <canvas id="recentorders" class="chart-dropshadow"></canvas>
+                </div>
+            </div>
+            <div id="back-chart"></div>
+            <div class="card-body">
+                <div class="d-flex mb-4 mt-3">
+                    <div class="avatar avatar-md bg-secondary-transparent text-secondary bradius me-3">
+                        <i class="fe fe-check"></i>
+                    </div>
+                    <div class="">
+                        <h6 class="mb-1 fw-semibold fs-14">Delivered Invoices</h6>
+                        <p class="fw-normal fs-12 mb-1"> <span class="text-success">3.5%</span>
+                            increased </p>
+                    </div>
+                    <div class=" ms-auto mb-auto">
+                        <p class="fw-bold fs-20 mb-0"> 1,768 </p>
+                    </div>
+                </div>
+                <div class="d-flex">
+                    <div class="avatar  avatar-md bg-pink-transparent text-pink bradius me-3">
+                        <i class="fe fe-x"></i>
+                    </div>
+                    <div class="">
+                        <h6 class="mb-1 fw-semibold fs-14">Cancelled Invoices</h6>
+                        <p class="fw-normal fs-12 mb-1"> <span class="text-success">1.2%</span>
+                            increased </p>
+                    </div>
+                    <div class=" ms-auto mb-auto">
+                        <p class="fw-bold fs-20 mb-0"> 3,675 </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- COL END -->
+</div>
+<!-- ROW-2 END -->
+
+<!-- ROW-3 -->
+<div class="row">
+    <div class="col-xxl-4 col-md-12">
+        <div class="card">
+            <div class="card-header">
+                <h4 class="card-title fw-semibold">Daily Activity</h4>
+            </div>
+            <div class="card-body pb-0">
+                <ul class="task-list">
+                    <li class="d-sm-flex">
+                        <div>
+                            <i class="task-icon bg-primary"></i>
+                            <h6 class="fw-semibold">Task Finished<span class="text-muted fs-11 mx-2 fw-normal">09 July
+                                    2024</span>
+                            </h6>
+                            <p class="text-muted fs-12 mb-0">Adam Berry finished task on<a href="javascript:void(0)"
+                                    class="fw-semibold text-primary"> Project
+                                    Management</a></p>
+                        </div>
+                        <div class="ms-auto d-md-flex">
+                            <a href="javascript:void(0)" class="text-muted me-2" data-bs-toggle="tooltip"
+                                data-bs-placement="top" title="Edit" aria-label="Edit"><span
+                                    class="fe fe-edit"></span></a>
+                            <a aria-label="anchor" href="javascript:void(0)" class="text-muted"><span
+                                    class="fe fe-trash-2"></span></a>
+                        </div>
+                    </li>
+                    <li class="d-sm-flex">
+                        <div>
+                            <i class="task-icon bg-secondary"></i>
+                            <h6 class="fw-semibold">New Comment<span class="text-muted fs-11 mx-2 fw-normal">05 July
+                                    2024</span>
+                            </h6>
+                            <p class="text-muted fs-12 mb-0">Victoria commented on Project <a href="javascript:void(0)"
+                                    class="fw-semibold text-primary">
+                                    Matter id #5</a></p>
+                        </div>
+                        <div class="ms-auto d-md-flex">
+                            <a href="javascript:void(0)" class="text-muted me-2" data-bs-toggle="tooltip"
+                                data-bs-placement="top" title="Edit" aria-label="Edit"><span
+                                    class="fe fe-edit"></span></a>
+                            <a aria-label="anchor" href="javascript:void(0)" class="text-muted"><span
+                                    class="fe fe-trash-2"></span></a>
+                        </div>
+                    </li>
+                    <li class="d-sm-flex">
+                        <div>
+                            <i class="task-icon bg-success"></i>
+                            <h6 class="fw-semibold">New Comment<span class="text-muted fs-11 mx-2 fw-normal">25 June
+                                    2024</span>
+                            </h6>
+                            <p class="text-muted fs-12 mb-0">Victoria commented on Project <a href="javascript:void(0)"
+                                    class="fw-semibold text-primary">
+                                    Matter id #6</a></p>
+                        </div>
+                        <div class="ms-auto d-md-flex">
+                            <a href="javascript:void(0)" class="text-muted me-2" data-bs-toggle="tooltip"
+                                data-bs-placement="top" title="Edit" aria-label="Edit"><span
+                                    class="fe fe-edit"></span></a>
+                            <a aria-label="anchor" href="javascript:void(0)" class="text-muted"><span
+                                    class="fe fe-trash-2"></span></a>
+                        </div>
+                    </li>
+                    <li class="d-sm-flex">
+                        <div>
+                            <i class="task-icon bg-warning"></i>
+                            <h6 class="fw-semibold">Task Overdue<span class="text-muted fs-11 mx-2 fw-normal">14 June
+                                    2024</span>
+                            </h6>
+                            <p class="text-muted mb-0 fs-12">Petey Cruiser finished task <a href="javascript:void(0)"
+                                    class="fw-semibold text-primary">
+                                    Integrated management</a></p>
+                        </div>
+                        <div class="ms-auto d-md-flex">
+                            <a href="javascript:void(0)" class="text-muted me-2" data-bs-toggle="tooltip"
+                                data-bs-placement="top" title="Edit" aria-label="Edit"><span
+                                    class="fe fe-edit"></span></a>
+                            <a aria-label="anchor" href="javascript:void(0)" class="text-muted"><span
+                                    class="fe fe-trash-2"></span></a>
+                        </div>
+                    </li>
+                    <li class="d-sm-flex">
+                        <div>
+                            <i class="task-icon bg-danger"></i>
+                            <h6 class="fw-semibold">Task Overdue<span class="text-muted fs-11 mx-2 fw-normal">29 June
+                                    2024</span>
+                            </h6>
+                            <p class="text-muted mb-0 fs-12">Petey Cruiser finished task <a href="javascript:void(0)"
+                                    class="fw-semibold text-primary">
+                                    Integrated management</a></p>
+                        </div>
+                        <div class="ms-auto d-md-flex">
+                            <a href="javascript:void(0)" class="text-muted me-2" data-bs-toggle="tooltip"
+                                data-bs-placement="top" title="Edit" aria-label="Edit"><span
+                                    class="fe fe-edit"></span></a>
+                            <a aria-label="anchor" href="javascript:void(0)" class="text-muted"><span
+                                    class="fe fe-trash-2"></span></a>
+                        </div>
+                    </li>
+                    <li class="d-sm-flex">
+                        <div>
+                            <i class="task-icon bg-info"></i>
+                            <h6 class="fw-semibold">Task Finished<span class="text-muted fs-11 mx-2 fw-normal">09 July
+                                    2024</span>
+                            </h6>
+                            <p class="text-muted fs-12 mb-0">Adam Berry finished task on<a href="javascript:void(0)"
+                                    class="fw-semibold text-primary"> Project
+                                    Management</a></p>
+                        </div>
+                        <div class="ms-auto d-md-flex">
+                            <a href="javascript:void(0)" class="text-muted me-2" data-bs-toggle="tooltip"
+                                data-bs-placement="top" title="Edit" aria-label="Edit"><span
+                                    class="fe fe-edit"></span></a>
+                            <a aria-label="anchor" href="javascript:void(0)" class="text-muted"><span
+                                    class="fe fe-trash-2"></span></a>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="col-xxl-4 col-lg-6 col-md-12">
+        <div class="card overflow-hidden">
+            <div class="card-header">
+                <div>
+                    <h3 class="card-title">Sales Report by Locations with Devices</h3>
+                </div>
+            </div>
+            <div class="card-body p-0 mt-2">
+                <div class="">
+                    <div id="visitors-countries" class="worldh world-map h-250"></div>
+                </div>
+                <div class="table-responsive mt-2 text-center">
+                    <table class="table text-nowrap border-dashed mb-0">
+                        <thead class="text-uppercase">
+                            <tr>
+                                <th scope="col" class="text-start">Device</th>
+                                <th scope="col" class="">USA</th>
+                                <th scope="col" class="">Canada</th>
+                                <th scope="col" class="">Great Britain</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td class="text-start p-3 d-flex align-items-center"><span
+                                        class="sales-icon text-primary bg-primary-transparent"><i
+                                            class="bi bi-phone"></i></span>Mobiles</td>
+                                <td class="p-3">17%</td>
+                                <td class="p-3">22%</td>
+                                <td class="p-3">11%</td>
+                            </tr>
+                            <tr>
+                                <td class="text-start p-3 d-flex align-items-center"><span
+                                        class="sales-icon text-secondary bg-secondary-transparent "><i
+                                            class="bi bi-display"></i></span>Desktops</td>
+                                <td class="p-3">34%</td>
+                                <td class="p-3">76%</td>
+                                <td class="p-3">58%</td>
+                            </tr>
+                            <tr>
+                                <td class="border-bottom-0 text-start p-3 d-flex align-items-center">
+                                    <span class="sales-icon text-danger bg-danger-transparent"><i
+                                            class="bi bi-tablet"></i></span>Tablets
+                                </td>
+                                <td class="border-bottom-0 p-3">56%</td>
+                                <td class="border-bottom-0 p-3">83%</td>
+                                <td class="border-bottom-0 p-3">66%</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <!--end /table-->
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-xxl-4 col-lg-6 col-md-12">
+        <div class="card">
+            <div class="card-header">
+                <h4 class="card-title fw-semibold">Browser Usage</h4>
+            </div>
+            <div class="card-body">
+                <div class="browser-stats">
+                    <div class="row mb-3">
+                        <div class="col-sm-2 col-lg-3 col-xl-3 col-xxl-2 mb-sm-0 mb-3">
+                            <img src="/assets/images/browsers/chrome.svg" class="img-fluid" alt="img">
+                        </div>
+                        <div class="col-sm-10 col-lg-9 col-xl-9 col-xxl-10 ps-sm-0">
+                            <div class="d-flex align-items-end justify-content-between mb-1">
+                                <h6 class="mb-1">Chrome</h6>
+                                <h6 class="fw-semibold mb-1">35,502 <span class="text-success fs-11">(<i
+                                            class="fe fe-arrow-up"></i>12.75%)</span></h6>
+                            </div>
+                            <div class="progress progress-sm mb-3">
+                                <div class="progress-bar bg-primary" style="width: 70%;"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row mb-3">
+                        <div class="col-sm-2 col-lg-3 col-xl-3 col-xxl-2 mb-sm-0 mb-3">
+                            <img src="/assets/images/browsers/opera.svg" class="img-fluid" alt="img">
+                        </div>
+                        <div class="col-sm-10 col-lg-9 col-xl-9 col-xxl-10 ps-sm-0">
+                            <div class="d-flex align-items-end justify-content-between mb-1">
+                                <h6 class="mb-1">Opera</h6>
+                                <h6 class="fw-semibold mb-1">12,563 <span class="text-danger fs-11">(<i
+                                            class="fe fe-arrow-down"></i>15.12%)</span></h6>
+                            </div>
+                            <div class="progress progress-sm mb-3">
+                                <div class="progress-bar bg-secondary" style="width: 40%;"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row mb-3">
+                        <div class="col-sm-2 col-lg-3 col-xl-3 col-xxl-2 mb-sm-0 mb-3">
+                            <img src="/assets/images/browsers/ie.svg" class="img-fluid" alt="img">
+                        </div>
+                        <div class="col-sm-10 col-lg-9 col-xl-9 col-xxl-10 ps-sm-0">
+                            <div class="d-flex align-items-end justify-content-between mb-1">
+                                <h6 class="mb-1">IE</h6>
+                                <h6 class="fw-semibold mb-1">25,364 <span class="text-success fs-11">(<i
+                                            class="fe fe-arrow-down"></i>24.37%)</span></h6>
+                            </div>
+                            <div class="progress progress-sm mb-3">
+                                <div class="progress-bar bg-success" style="width: 50%;"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row mb-3">
+                        <div class="col-sm-2 col-lg-3 col-xl-3 col-xxl-2 mb-sm-0 mb-3">
+                            <img src="/assets/images/browsers/firefox.svg" class="img-fluid" alt="img">
+                        </div>
+                        <div class="col-sm-10 col-lg-9 col-xl-9 col-xxl-10 ps-sm-0">
+                            <div class="d-flex align-items-end justify-content-between mb-1">
+                                <h6 class="mb-1">Firefox</h6>
+                                <h6 class="fw-semibold mb-1">14,635 <span class="text-success fs-11">(<i
+                                            class="fe fe-arrow-down"></i>15.63%)</span></h6>
+                            </div>
+                            <div class="progress progress-sm mb-3">
+                                <div class="progress-bar bg-danger" style="width: 50%;"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row mb-3">
+                        <div class="col-sm-2 col-lg-3 col-xl-3 col-xxl-2 mb-sm-0 mb-3">
+                            <img src="/assets/images/browsers/edge.svg" class="img-fluid" alt="img">
+                        </div>
+                        <div class="col-sm-10 col-lg-9 col-xl-9 col-xxl-10 ps-sm-0">
+                            <div class="d-flex align-items-end justify-content-between mb-1">
+                                <h6 class="mb-1">Edge</h6>
+                                <h6 class="fw-semibold mb-1">15,453 <span class="text-danger fs-11">(<i
+                                            class="fe fe-arrow-down"></i>23.70%)</span></h6>
+                            </div>
+                            <div class="progress progress-sm mb-3">
+                                <div class="progress-bar bg-warning" style="width: 10%;"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row mb-3">
+                        <div class="col-sm-2 col-lg-3 col-xl-3 col-xxl-2 mb-sm-0 mb-3">
+                            <img src="/assets/images/browsers/safari.svg" class="img-fluid" alt="img">
+                        </div>
+                        <div class="col-sm-10 col-lg-9 col-xl-9 col-xxl-10 ps-sm-0">
+                            <div class="d-flex align-items-end justify-content-between mb-1">
+                                <h6 class="mb-1">Safari</h6>
+                                <h6 class="fw-semibold mb-1">10,054 <span class="text-success fs-11">(<i
+                                            class="fe fe-arrow-up"></i>11.04%)</span></h6>
+                            </div>
+                            <div class="progress progress-sm mb-3">
+                                <div class="progress-bar bg-info" style="width: 40%;"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-2 col-lg-3 col-xl-3 col-xxl-2 mb-sm-0 mb-3">
+                            <img src="/assets/images/browsers/netscape.svg" class="img-fluid" alt="img">
+                        </div>
+                        <div class="col-sm-10 col-lg-9 col-xl-9 col-xxl-10 ps-sm-0">
+                            <div class="d-flex align-items-end justify-content-between mb-1">
+                                <h6 class="mb-1">Netscape</h6>
+                                <h6 class="fw-semibold mb-1">35,502 <span class="text-success fs-11">(<i
+                                            class="fe fe-arrow-up"></i>12.75%)</span></h6>
+                            </div>
+                            <div class="progress progress-sm mb-3">
+                                <div class="progress-bar bg-green" style="width: 30%;"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- ROW-3 END -->
+
+{% if object_list %}
+<div class="row">
+    <div class="col-12 col-sm-12">
+        <div class="card">
+            <div class="card-header d-lg-flex">
+                <h3 class="card-title mb-lg-0 mb-3">Mediators</h3>
+            </div>
+            <div class="card-body product-table">
+                <label class="mb-3">
+                    <input type="search" style="width: 100%;" class="form-control" placeholder="Search mediators...">
+                </label>
+                <div class="table-responsive">
+                    <table class="table table-bordered text-nowrap mb-0">
+                        <thead class="border-top">
+                            <tr>
+                                <th scope="col" class="">First Name</th>
+                                <th scope="col" class="">Last Name</th>
+                                <th scope="col" class="">Email</th>
+                                <th scope="col" class="">Biography</th>
+                            </tr>
+                        </thead>
+                        <tbody class="loading_tbody">
+                            {% for object in object_list %}
+                            <tr>
+                                <td>
+                                    <h6 class="mb-0 fs-14 fw-semibold">{{ object.first_name }}</h6>
+                                </td>
+                                <td>
+                                    <div class="d-flex">
+                                        <h6 class="ms-3 my-auto fs-14 fw-semibold">{{ object.last_name }}</h6>
+                                    </div>
+                                </td>
+
+                                <td>
+                                    <h6 class="mb-0 fs-14 fw-semibold">{{ object.email }}</h6>
+                                </td>
+                                <td>
+                                    <h6 class="mb-0 fs-14 fw-semibold">{{ object.bio }}</h6>
+                                </td>
+                            </tr>
+                            {% endfor %}
+                            {% if page_obj.has_next %}
+                            <tr class="load centered m-1 next_page_list"
+                                data-link="/admin/?page={{ page_obj.next_page_number }}">
+                                <td>
+                                    <span class="avatar cover-image avatar-sm" data-bs-image-src="/assets/loading.gif">
+                                    </span>
+                                </td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+
+                            </tr>
+                            {% endif %}
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% else %}
+<div class="col-12 col-sm-12">
+    No lawyers have been found...
+</div>
+{% endif %}
+
+{% endblock %}

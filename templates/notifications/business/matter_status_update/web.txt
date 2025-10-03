@@ -1,0 +1,4 @@
+{% extends "notifications/base.txt" %}
+{% block content %}
+Mediator changed status for matter '{{ instance.title }}' to {{ instance.stage.title }}.
+{% endblock %}

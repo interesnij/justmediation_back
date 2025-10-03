@@ -1,0 +1,9 @@
+{% extends "notifications/base.html" %}
+
+{% load i18n %}
+
+{% block email_body %}
+  <p>
+    {{ instance.client.full_name }} has deactivated {{instance.title}}.
+  </p>
+{% endblock %}

@@ -1,0 +1,4 @@
+{% extends "notifications/base.txt" %}
+{% block content %}
+{{ notification_sender.full_name }} uploaded a document in your folder
+{% endblock %}

@@ -1,0 +1,4 @@
+{% extends "notifications/base.txt" %}
+{% block content %}
+New event `{{instance.title}}` by {{instance.mediator.display_name}}
+{% endblock %}

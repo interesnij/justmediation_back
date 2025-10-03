@@ -1,0 +1,8 @@
+{% extends "notifications/base.txt" %}
+{% block content %}
+{% if recipient.is_mediator %}
+  Potential client {{ instance.client.display_name }} wants to make a contact with you.
+{% elif recipient.is_client %}
+  Mediator {{ instance.mediator.display_name }} wants to make a contact with you.
+{% endif %}
+{% endblock %}

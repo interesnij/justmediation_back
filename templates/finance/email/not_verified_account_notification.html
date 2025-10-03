@@ -1,0 +1,11 @@
+{% extends "email_base.html" %}
+
+{% load i18n %}
+{% block email_body %}
+  {% autoescape off %}
+    <p>There is something wrong in your Direct Deposits account verification in Stripe</p>
+    <p>Please, follow this <a href='{{ stripe_account_url }}'>link</a> to extend or update your information.</p>
+    <br/>
+    <p>Please contact your Administrator if you found that all data in your account is correct.</p>
+  {% endautoescape %}
+{% endblock %}

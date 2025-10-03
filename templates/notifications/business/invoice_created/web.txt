@@ -1,0 +1,4 @@
+{% extends "notifications/base.txt" %}
+{% block content %}
+{{ instance.matter.mediator.display_name }} has created an invoice in the matter {{instance.matter.title}}.
+{% endblock %}

@@ -1,0 +1,15 @@
+{% extends "email_base.html" %}
+
+{% load i18n %}
+{% block email_body %}
+{% autoescape off %}
+<p>
+  {{invite.user.full_name}}
+  {% if invite.user.client.is_organization %}
+  from {{invite.user.client.organization_name}}
+  {% endif %}
+  has registered on JustMediation.
+  You may now create a matter and add them.
+</p>
+{% endautoescape %}
+{% endblock %}

@@ -1,0 +1,4 @@
+{% extends "notifications/base.txt" %}
+{% block content %}
+Mediator changed status for matter '{{ instance }}' to {% if new_status %}{{ new_status }}{% else %}{{ instance.status }}{% endif%}.
+{% endblock %}

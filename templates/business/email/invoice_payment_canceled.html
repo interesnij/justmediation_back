@@ -1,0 +1,9 @@
+{% extends "email_base.html" %}
+
+{% load i18n %}
+{% block email_body %}
+  {% autoescape off %}
+    <p>Your payment for invoice {{invoice.title}} has been canceled.</p>
+    <p>Click <a href="{{ deep_link }}">here</a> to go to app.</p>
+  {% endautoescape %}
+{% endblock %}

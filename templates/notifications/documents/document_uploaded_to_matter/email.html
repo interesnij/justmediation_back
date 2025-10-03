@@ -1,0 +1,7 @@
+{% extends "notifications/base.html" %}
+
+{% load i18n %}
+
+{% block email_body %}
+<p>{{ notification_sender.full_name }} uploaded a document in the matter {{instance.matter.title}}</p>
+{% endblock %}

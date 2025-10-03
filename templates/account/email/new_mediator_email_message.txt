@@ -1,0 +1,8 @@
+{% load account %}
+{% user_display user as user_display %}
+{% load i18n %}
+{% autoescape off %}
+
+You've been invited to join a case on justmediation.com! To access the case details, simply log in to your account using the temporary password provided below and update your information. 
+Temporary Password: ({{ password }})
+We look forward to having your expertise on board.

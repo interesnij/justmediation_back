@@ -1,0 +1,63 @@
+<!-- This html used to test incoming push notifications from backend -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Test push notifications</title>
+</head>
+<body>
+<h1>
+  This html used to test incoming push notifications from backend.
+  All stuff you need is in console. To receive notifications don't forget to grant permission for it.
+</h1>
+</body>
+<!-- Firebase App (the core Firebase SDK) is always required and must be listed first -->
+<script src="https://www.gstatic.com/firebasejs/7.6.0/firebase-app.js"></script>
+
+<!-- Add Firebase products that you want to use -->
+<script src="https://www.gstatic.com/firebasejs/7.6.0/firebase-messaging.js"></script>
+<script>
+    // Insert configs from config/google-credentials/project-settings.json
+    const firebaseConfig = null;
+
+    firebase.initializeApp(firebaseConfig);
+    const messaging = firebase.messaging();
+    // Get permission to display notifications
+    Notification.requestPermission().then((permission) => {
+      if (permission === 'granted') {
+        console.log('Notification permission granted.');
+      } else {
+        console.log('Unable to get permission to notify.');
+      }
+    });
+    navigator.serviceWorker.register('firebase-messaging-sw.js').then((registration) => {
+      messaging.useServiceWorker(registration);
+      // Get it from https://console.firebase.google.com/u/0/project/juslaw-platform/settings/cloudmessaging
+      messaging.usePublicVapidKey('');
+      // Get fcm device token
+      messaging.getToken().then((currentToken) => {
+        if (currentToken) {
+            console.log('FCM device token use in django admin to create new device', currentToken);
+        } else {
+          // Show permission request.
+          console.log('No Instance ID token available. Request permission to generate one.');
+          Notification.requestPermission().then((permission) => {
+            if (permission === 'granted') {
+              console.log('Notification permission granted.');
+            } else {
+              console.log('Unable to get permission to notify.');
+            }
+          });
+        }
+        }).catch((err) => {
+          console.log('An error occurred while retrieving token.', err);
+      });
+
+      // Show push payload in console
+      messaging.onMessage((payload) => {
+        console.log('Message received. ', payload);
+      });
+    });
+
+</script>
+</html>

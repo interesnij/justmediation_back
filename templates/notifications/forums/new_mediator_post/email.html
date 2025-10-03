@@ -1,0 +1,6 @@
+{% extends "notifications/base.html" %}
+
+{% load i18n %}
+{% block email_body %}
+  <p>{{ instance.author.display_name }} has just posted to the forum.</p>
+{% endblock %}

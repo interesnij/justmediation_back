@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+{% load static i18n %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{{app_label}} Project</title>
+    <link rel="stylesheet"
+          href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+          integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk"
+          crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"
+            integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0="
+            crossorigin="anonymous">
+    </script>
+
+</head>
+<body>
+    <nav class="navbar navbar-expand-sm navbar-dark bg-dark">
+          <button class="navbar-toggler"
+                  type="button"
+                  data-toggle="collapse"
+                  data-target="#collapsibleNavbar">
+              <span class="navbar-toggler-icon"></span>
+          </button>
+        <div class="collapse navbar-collapse" id="collapsibleNavbar">
+            <div class="navbar-nav mr-auto">
+                <a class="nav-item nav-link" href="{%url 'admin:index'%}">Admin page</a>
+                <a class="nav-item nav-link" href="{{app_url}}">Open {{app_label}}</a>
+                <a class="nav-item nav-link" href="{%url 'health-check'%}">Open Health Check</a>
+                {% if env != 'production' %}
+                  <a class="nav-item nav-link" href="/docs/" target="blank">Docs</a>
+                {% endif %}
+            </div>
+            <div class="navbar-text mr-1">
+                <span class="badge badge-primary">{{env|capfirst}} environment</span>
+                <span class="badge badge-success">App Version {{version}}</span>
+                <span class="badge badge-success">Python {{python_version}}</span>
+                <span class="badge badge-success">Django {{django_version}}</span>
+            </div>
+            <div class="navbar-text">
+                {{app_label}} Project ({{user}})
+            </div>
+        </div>
+    </nav>
+    {% block content %}
+    {% endblock content %}
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+            integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+            crossorigin="anonymous">
+    </script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
+            integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI"
+            crossorigin="anonymous">
+    </script>
+    {% block extra_js %}
+    {% endblock extra_js %}
+</body>
+</html>

@@ -1,0 +1,4 @@
+{% load i18n %}
+{% autoescape off %}
+{% blocktrans %}Thank you for submitting your RFP forms{% endblocktrans %}
+{% endautoescape %}

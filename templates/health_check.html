@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block content %}
+<div class="container-fluid" style="margin-top: 0.5em">
+    <table id="health-check" class="table table-striped table-dark table-bordered table-hover mb-3">
+        <thead>
+            <tr>
+                <th class="w-25" scope="col">Service</th>
+                <th class="w-75" scope="col">Status</th>
+            </tr>
+        </thead>
+        <tbody>
+          <tr id="health-check-progress">
+            <td colspan="2">
+              <div class="progress m-3">
+                  <div class="progress-bar progress-bar-striped progress-bar-animated"
+                       role="progressbar"
+                       aria-valuenow="100"
+                       aria-valuemin="0"
+                       aria-valuemax="100"
+                       style="width: 100%">
+                  </div>
+              </div>
+          </tr>
+        </tbody>
+    </table>
+</div>
+{% endblock content %}
+{% block extra_js %}
+<script src="{% static 'js/health_check.js' %}"></script>
+<script>
+    renderPerformHealthCheck("{%url 'v1:health_check:health_check'%}")
+</script>
+{% endblock extra_js %}

@@ -1,0 +1,9 @@
+{% extends "notifications/base.html" %}
+
+{% load i18n %}
+
+{% block email_body %}
+  <p>
+    {{ instance.post.client.full_name }} has accepted your proposal on the {{instance.post.title}}.
+  </p>
+{% endblock %}

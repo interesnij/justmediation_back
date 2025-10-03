@@ -1,0 +1,8 @@
+{% extends "notifications/base.txt" %}
+{% block content %}
+	{% if notification_sender %}
+	The matter {{ instance.title }} has been referred to you by {{ notification_sender.full_name }}
+	{% else %}
+	The matter {{ instance.title }} has been referred to you.
+	{% endif %}
+{% endblock %}

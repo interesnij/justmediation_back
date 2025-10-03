@@ -1,0 +1,9 @@
+{% extends "notifications/base.html" %}
+
+{% load i18n %}
+
+{% block email_body %}
+  <p>
+    {{ instance.author.display_name }} has sent you a message on the {{instance.topic.title}} in the matter {{instance.post.matter.title}}.
+  </p>
+{% endblock %}

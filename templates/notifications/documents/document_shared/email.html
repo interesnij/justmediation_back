@@ -1,0 +1,6 @@
+{% extends "notifications/base.html" %}
+
+{% load i18n %}
+{% block email_body %}
+  <p>{{ instance.matter.title }} has had a file added to the shared folder.</p>
+{% endblock %}

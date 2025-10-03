@@ -1,0 +1,6 @@
+{% extends "notifications/base.html" %}
+
+{% load i18n %}
+{% block email_body %}
+  <p>A new reply has been added to {{ instance.topic.title }}.</p>
+{% endblock %}

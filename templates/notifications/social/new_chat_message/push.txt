@@ -1,0 +1,8 @@
+{% extends "notifications/base.txt" %}
+{% block content %}
+{% if is_group %}
+  {{user_name}} sent you a chat message in a group chat
+{% else %}
+  {{user_name}} sent you a chat message
+{% endif %}
+{% endblock %}

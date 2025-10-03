@@ -1,0 +1,7 @@
+{% extends "notifications/base.html" %}
+
+{% load i18n %}
+
+{% block email_body %}
+  <p>You have {{ instance.count }} new opportunities.</p>
+{% endblock %}

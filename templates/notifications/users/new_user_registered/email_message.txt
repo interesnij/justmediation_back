@@ -1,0 +1,6 @@
+{% autoescape off %}
+
+{{ text }}
+
+To confirm this, go to {{ activate_url }}
+{% endautoescape %}

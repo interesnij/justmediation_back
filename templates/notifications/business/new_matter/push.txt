@@ -1,0 +1,4 @@
+{% extends "notifications/base.txt" %}
+{% block content %}
+A new matter - {{ instance.title }} has been created.
+{% endblock %}

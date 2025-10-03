@@ -1,0 +1,4 @@
+{% extends "notifications/base.txt" %}
+{% block content %}
+Mediator user {{name}} has completed registration and waiting for your approval
+{% endblock %}

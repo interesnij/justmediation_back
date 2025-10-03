@@ -1,0 +1,12 @@
+{% extends "notifications/base.html" %}
+
+{% load i18n %}
+
+{% block email_body %}
+    <p>
+        A video call have started with
+        {% for participant in other_participants %}
+            {{ participant }} {% if not forloop.last %}, {% endif %}
+        {% endfor %}
+    </p>
+{% endblock %}

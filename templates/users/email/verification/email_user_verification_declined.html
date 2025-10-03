@@ -1,0 +1,14 @@
+{% extends "email_base.html" %}
+
+{% load i18n %}
+{% block email_body %}
+{% autoescape off %}
+<tr>
+  <td style="font-family: sans-serif; font-size: 14px; vertical-align: top; text-align: left;">
+    <p>{% blocktrans %}Dear{% endblocktrans %}, {{ app_user.first_name }}.</p>
+    <p>{% blocktrans %}Your profile verification has been declined by administrator{% endblocktrans %}
+    </p>
+  </td>
+</tr>
+{% endautoescape %}
+{% endblock %}

@@ -1,0 +1,18 @@
+{% extends "notifications/base.html" %}
+
+{% load i18n %}
+
+{% block email_body %}
+  <p>
+    <p>The matter `{{ instance.matter.title }}` has been shared with you.</p>
+    {% if title and message %}
+      {% if inviter %}
+        <p>Please read {{ inviter.full_name }}'s message:</p>
+      {% else %}
+        <p>Please read inviter's message:</p>
+      {% endif %}
+      <p>{{ title }},</p>
+      <p>{{ message }}</p>
+    {% endif %}
+  </p>
+{% endblock %}

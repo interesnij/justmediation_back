@@ -1,0 +1,4 @@
+{% extends "notifications/base.txt" %}
+{% block content %}
+ {{ instance.client.full_name }} has deactivated {{instance.title}}.
+{% endblock %}

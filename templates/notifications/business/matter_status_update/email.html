@@ -1,0 +1,6 @@
+{% extends "notifications/base.html" %}
+
+{% load i18n %}
+{% block email_body %}
+  <p>{{instance.title}} stage has been updated to {{instance.stage.title}}.</p>
+{% endblock %}

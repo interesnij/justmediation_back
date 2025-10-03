@@ -1,0 +1,25 @@
+{% extends "notifications/base.html" %}
+
+{% load i18n %}
+
+{% block email_body %}
+<tr> 
+  <td style="font-family: sans-serif; font-size: 14px; vertical-align: top; text-align: left;">
+    {% if type == 'text' %}
+    <p>
+      New message is sent from {{author_name}}.
+    </p>
+    <p>
+      {{message}}
+    </p>
+    {% elif type == 'endCall' %}
+    <p>
+      {{message}}
+    </p>
+    {% elif type == 'voice' %}
+    <p>
+      {{message}}
+    </p>
+    {% endif %}
+</tr>
+{% endblock %}

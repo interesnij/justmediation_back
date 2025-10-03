@@ -1,0 +1,7 @@
+{% extends "notifications/base.html" %}
+
+{% load i18n %}
+
+{% block email_body %}
+<p>Your referral on `{{ instance.title }}` has been declined by {{ instance.mediator.full_name }}</p>
+{% endblock %}

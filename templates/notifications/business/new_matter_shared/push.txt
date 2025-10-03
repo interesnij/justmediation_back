@@ -1,0 +1,4 @@
+{% extends "notifications/base.txt" %}
+{% block content %}
+The matter `{{ instance.matter.title }}` has been shared with you.
+{% endblock %}

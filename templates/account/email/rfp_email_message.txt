@@ -1,0 +1,6 @@
+{% load account %}
+{% user_display user as user_display %}
+{% load i18n %}
+{% autoescape off %}
+
+Hi {{ user.first_name }}! Welcome to JustMediation.com! Thank you for submitting your RFP forms – we've created an account for you using temporary password. Please log in andupdate your information to get started. Your login: {{ user.email }}. Your password: {{ password }}. Link to CRM: https://app.justmediation.com

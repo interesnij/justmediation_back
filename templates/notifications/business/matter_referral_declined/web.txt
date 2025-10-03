@@ -1,0 +1,4 @@
+{% extends "notifications/base.txt" %}
+{% block content %}
+	Your referral on {{ instance.title }} has been declined by {{ instance.mediator.full_name }}
+{% endblock %}

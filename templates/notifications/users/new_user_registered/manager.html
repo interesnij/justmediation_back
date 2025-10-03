@@ -1,0 +1,18 @@
+{% extends "notifications/base.html" %}
+
+{% load i18n %}
+
+{% block email_body %}
+<tr>
+  <td style="font-family: sans-serif; font-size: 14px; vertical-align: top; text-align: left;">
+    <p>Mediator user {{ full_name }} has completed registration and waiting for your approval</p>
+  </td>
+</tr>
+<tr>
+  <td style="font-family: sans-serif; font-size: 14px; vertical-align: top;">
+    <a href="https://backend.justmediation.com/admin/" target="_blank"
+      style="display: inline-block; color: #ffffff; background-color: #00953B; border: solid 1px #00953B; border-radius: 5px; box-sizing: border-box; cursor: pointer; text-decoration: none; font-size: 14px; font-weight: bold; margin: 0; padding: 12px 25px; text-transform: capitalize; border-color: #00953B;">
+      Log in to Admin Panel</a>
+  </td>
+</tr>
+{% endblock %}

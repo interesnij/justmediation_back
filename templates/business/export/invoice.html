@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <style>
+        body {
+            background-color: white;
+        }
+        table {
+            width: 100%;
+        }
+        th {
+            font-weight: bold;
+        }
+        td, th {
+            text-align: center;
+        }
+        .invoice-header {
+            text-align: left;
+        }
+        .invoice-body {
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="invoice-header">
+        <h1>{{ month_period }} Invoice</h1>
+        <br/>
+        <h2>{{ matter.client.display_name }}</h2>
+        <h2>{{ matter.title }}</h2>
+        <h2>{{ date_period }}</h2>
+    </div>
+    <br/>
+    <div class="invoice-body">
+        <table>
+            <thead>
+            <tr>
+                <th>Start Date</th>
+                <th>Fee Structure</th>
+                <th>Rate</th>
+                <th>Total Time Spent</th>
+                <th>Total Fees Earned</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td>{{ object.period_start|date:'m/d/y' }}</td>
+                <td>{{ matter.rate_type }}</td>
+                <td>${{ matter.rate }}</td>
+                <td>{{ object.time_billed }}</td>
+                <td>${{ object.fees_earned }}</td>
+            </tr>
+            </tbody>
+        </table>
+
+        <br />
+        <br />
+        <h3>Billable Time</h3>
+        <table>
+            <thead>
+            <tr>
+                <th width="10%">Date</th>
+                <th width="50%">Description</th>
+                <th width="15%">Time Logged</th>
+                <th width="15%">Fees <br/>(Time x Rate)</th>
+            </tr>
+            </thead>
+            <tbody>
+            {% for job in billed_time.all|dictsort:"date" %}
+                <tr>
+                    <td>{{ job.date|date:'m/d/y' }}</td>
+                    <td style="text-align: left">{{ job.description }}</td>
+                    <td>{{ job.time_spent }}</td>
+                    <td>${{ job.fees }}</td>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>
