@@ -74,23 +74,5 @@ LOGGING = {
             'propagate': True,
             'formatter': 'minimal',
         },
-        'firestore': {
-            'handlers': ['firestore_log'],
-            'level': 'ERROR',
-            'propagate': True,
-            'formatter': 'minimal',
-        },
-        #'docusign': {
-        #    'handlers': ['docusign_log'],
-        #    'level': 'ERROR',
-        #    'propagate': True,
-        #    'formatter': 'minimal',
-        #},
-        'quickbooks': {
-            'handlers': ['quickbooks_log'],
-            'level': 'ERROR',
-            'propagate': True,
-            'formatter': 'minimal',
-        },
     }
 }
