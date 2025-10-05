@@ -181,7 +181,7 @@ class AppUser(BaseModel, AbstractBaseUser, PermissionsMixin):
         related_name='users',
         blank=True,
         null=True,
-        default=1  # Установите PST по умолчанию
+        #default=1  # Установите PST по умолчанию
     )
 
     is_free_subscription = models.BooleanField(
