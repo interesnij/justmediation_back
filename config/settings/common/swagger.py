@@ -11,7 +11,7 @@ SWAGGER_SETTINGS = {
 }
 
 API_INFO_BACKEND = {
-    'title': 'JustMediation API',
+    'title': 'justmediationhub API',
     'default_version': "1",
-    'description': 'JustMediation swagger API specification',
+    'description': 'justmediationhub swagger API specification',
 }

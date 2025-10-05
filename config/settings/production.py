@@ -3,13 +3,13 @@ from .common import *
 DEBUG = True
 ENVIRONMENT = 'production'
  
-BASE_URL = 'https://backend.justmediation.com'
+BASE_URL = 'https://backend.justmediationhub.com'
 
 ADMINS = (
     'interesnijsim49293@gmail.com',
     'zuvarevserg@outlook.com',
-    'support@justmediation.com',
-    'alex.goldobin@justmediation.com'
+    'support@justmediationhub.com',
+    'alex.goldobin@justmediationhub.com'
 )
 MANAGERS = ADMINS
 MAINTAINERS = ADMINS
@@ -39,7 +39,7 @@ DATABASES = {
 }
 
 PROD_FRONTEND_LINK=(
-        'https://app.justmediation.com/',
+        'https://app.justmediationhub.com/',
         'Prod frontend url',
         'url_field'
     )
@@ -59,7 +59,7 @@ SENDGRID_ECHO_TO_STDOUT=False
 """
 EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_PORT = 587
-EMAIL_HOST_USER = 'justmediation.com@gmail.com'
+EMAIL_HOST_USER = 'justmediationhub.com@gmail.com'
 EMAIL_HOST_PASSWORD = 'vrevfnsdhjyhmdsr'
 EMAIL_USE_TLS = True
 DEFAULT_FROM_EMAIL = 'Beatrice@jusglobal.com'

@@ -38,20 +38,20 @@ class AccountAdapter(DefaultAccountAdapter):
     def send_rfp_mail(self, user, password):
         ctx = {
             "user": user,
-            "current_site": "https://app.justmediation.com/",
+            "current_site": "https://app.justmediationhub.com/",
             "password": password,
         }
         email_template = 'account/email/rfp_email'
-        self.send_mail(email_template, 'tech@justmediation.com', ctx)
+        self.send_mail(email_template, 'tech@justmediationhub.com', ctx)
     
     def send_new_mediator_mail(self, user, password):
         ctx = {
             "user": user,
-            "current_site": "https://app.justmediation.com/",
+            "current_site": "https://app.justmediationhub.com/",
             "password": password,
         }
         email_template = 'account/email/new_mediator_email'
-        self.send_mail(email_template, 'tech@justmediation.com', ctx)
+        self.send_mail(email_template, 'tech@justmediationhub.com', ctx)
 
 
     def send_confirmation_mail(self, request, emailconfirmation, signup):
@@ -79,12 +79,12 @@ class AccountAdapter(DefaultAccountAdapter):
                 ctx
             )
             if user.is_client:
-                activate_url = "https://backend.justmediation.com/admin/users/client/" + str(user.id) + "/change/"
+                activate_url = "https://backend.justmediationhub.com/admin/users/client/" + str(user.id) + "/change/"
                 text = "New client " + user.full_name + " has completed registration."
                 user_types = 1
                 self.send_mail( 
                     'notifications/users/new_user_registered/email',
-                    'tech@justmediation.com',
+                    'tech@justmediationhub.com',
                     {
                         "instance": user,
                         "current_site": current_site,
@@ -94,16 +94,16 @@ class AccountAdapter(DefaultAccountAdapter):
                 )
             elif user.is_mediator:
                 user_types = 2
-            #    activate_url = "https://backend.justmediation.com/admin/users/mediator/" + str(user.id) + "/change/"
+            #    activate_url = "https://backend.justmediationhub.com/admin/users/mediator/" + str(user.id) + "/change/"
             #    text = "New mediator " + user.full_name + " has completed registration and waiting for your approval."
             elif user.is_enterprise_admin:
                 user_types = 4
             #    _pk = models.Enterprise.objects.get(user_id=user.id)
-            #    activate_url = "https://backend.justmediation.com/admin/users/enterprise/" + str(_pk) + "/change/"
+            #    activate_url = "https://backend.justmediationhub.com/admin/users/enterprise/" + str(_pk) + "/change/"
             #    text = "New enterprise admin " + user.full_name + " has completed registration and waiting for your approval."
             else:
                 user_types = 1
-            #    activate_url = "https://backend.justmediation.com/admin/"
+            #    activate_url = "https://backend.justmediationhub.com/admin/"
             #    text = "New app user " + user.full_name + " has completed registration."
             if settings.F_DOMAIN != "":
                 requests.post(settings.F_DOMAIN + 'create_user', json={

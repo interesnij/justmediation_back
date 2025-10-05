@@ -6,16 +6,16 @@ from django.core.management import BaseCommand
 from apps.finance.constants import PlanTypes
 from apps.finance.models import PlanProxy, ProductProxy
 
-STANDARD_DESC = """Get access to all features JustMediation has to offer! Use the
-JustMediation forum to answer potential client questions, convert potentials to be
+STANDARD_DESC = """Get access to all features justmediationhub has to offer! Use the
+justmediationhub forum to answer potential client questions, convert potentials to be
 your clients via in-app chats, create matters for your new clients, bill your
 time, and invoice and more."""
 
 
 PREMIUM_DESC = """Get access to standard features and more! Appear first to a
 potential client when they search for mediators, appear as a featured
-mediator on the JustMediation homepage. The premium subscription gives you the most
-visibility on JustMediation and much more."""
+mediator on the justmediationhub homepage. The premium subscription gives you the most
+visibility on justmediationhub and much more."""
 
 
 class Command(BaseCommand):

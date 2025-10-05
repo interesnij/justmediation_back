@@ -92,7 +92,7 @@ class SubscriptionCancelRequestedEmailNotification(
 ):
     """ Отправьте электронное письмо администратору, когда пользователь 
     запросит отменить свою подписку. """
-    recipient_list = ['support@JustMediation.com']
+    recipient_list = ['support@justmediationhub.com']
     template = 'finance/email/subscription_cancel_requested.html'
 
     def __init__(self, user):

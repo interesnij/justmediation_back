@@ -1,4 +1,4 @@
 {% load i18n %}
 {% autoescape off %}
-{% blocktrans %}You have been invited to the JustMediation platform{% endblocktrans %}
+{% blocktrans %}You have been invited to the justmediationhub platform{% endblocktrans %}
 {% endautoescape %}

@@ -27,7 +27,7 @@ class MediatorPeriodBusinessResource(ExcelResource):
     def filename(self) -> str:
         """Prepare filename for export."""
         return (
-            f'(JustMediation) Business report for '
+            f'(justmediationhub) Business report for '
             f'{self.period_start} - {self.period_end}'
             f'.{self.extension}'
         )

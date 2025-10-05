@@ -18,14 +18,14 @@ from pygments.lexers.data import JsonLexer
 
 def get_base_url() -> str:
     """ Получите текущий домен интерфейса. """
-    current_site = 'https://app.justmediation.com/'
+    current_site = 'https://app.justmediationhub.com/'
 
     return current_site
 
 
 def get_admin_base_url() -> str:
     """ Получите домен администратора. """
-    current_site = 'https://backend.justmediation.com/admin/'
+    current_site = 'https://backend.justmediationhub.com/admin/'
 
     return current_site
 

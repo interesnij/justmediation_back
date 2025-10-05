@@ -35,10 +35,10 @@ class Mediator(AppUserHelperMixin, VerifiedRegistration):
             denied - Отклонено администраторами
         featured (bool): Если у адвоката есть премиум-подписка, он становится избранным адвокатом
             в поиске клиентов
-        sponsored (bool): Если адвокат каким-либо образом спонсируется justmediation, то администратор 
+        sponsored (bool): Если адвокат каким-либо образом спонсируется justmediationhub, то администратор 
             устанавливает это поле, и этот адвокат появится в специальном месте на главной
             страница сайта. (Это альтернатива избранному)
-        sponsor_link (str): Ссылка на спонсора justmediation. Будет использоваться на интерфейсной 
+        sponsor_link (str): Ссылка на спонсора justmediationhub. Будет использоваться на интерфейсной 
             части.
         followers (AppUser): Пользователи, которые подписаны на адвоката. Они будут получать 
             уведомления о деятельности адвоката 
@@ -106,14 +106,14 @@ class Mediator(AppUserHelperMixin, VerifiedRegistration):
     sponsored = models.BooleanField(
         default=False,
         verbose_name=_('Is sponsored'),
-        help_text=_('Is mediator sponsored justmediation')
+        help_text=_('Is mediator sponsored justmediationhub')
     )
 
     sponsor_link = models.URLField(
         null=True,
         blank=True,
         verbose_name=_('Sponsor link'),
-        help_text=_('Link to the sponsor of justmediation')
+        help_text=_('Link to the sponsor of justmediationhub')
     )
 
     # Location

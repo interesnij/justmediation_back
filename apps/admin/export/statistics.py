@@ -16,7 +16,7 @@ class AppStatisticsResource(ExcelResource):
     def filename(self) -> str:
         """ Подготовьте имя файла для экспорта. """
         date_now = arrow.utcnow().strftime('%Y-%m-%d')
-        return f'(JustMediation) Dashboard Stats for {date_now}.{self.extension}'
+        return f'(justmediationhub) Dashboard Stats for {date_now}.{self.extension}'
 
     def export(self) -> bytes:
         """ Экспортируйте данные в виде файла excel. """

@@ -134,7 +134,7 @@ class AdminNewUserRegisteredNotificationResource(BaseNotificationResource):
     """ Класс уведомлений для уведомления о регистрации для администратора.
     Это уведомление предназначено для уведомления администратора пользователя 
     всякий раз, когда адвокат или помощник юриста, или предприятие зарегистрированы
-    Recipients: admin(support@JustMediation.com)
+    Recipients: admin(support@justmediationhub.com)
     """ 
     signal = user_signals.new_user_registered
     title = 'New User'

@@ -296,7 +296,7 @@ class MatterSharedResource(BaseNotificationResource):
         # Since inviter is not saved in MatterSharedWith and adding it is
         # troublesome(since it's m2m relation). We save it in as id in the
         # notification payload. Added these checks just to be save.
-        'JustMediation - New shared matter {{instance.matter.title}}'
+        'justmediationhub - New shared matter {{instance.matter.title}}'
         '{% endif %}'
     )
     email_content_template = (
@@ -376,7 +376,7 @@ class MatterReferredResource(BaseNotificationResource):
         # Since inviter is not saved in MatterSharedWith and adding it is
         # troublesome(since it's m2m relation). We save it in as id in the
         # notification payload. Added these checks just to be save.
-        'JustMediation - New referred matter {{instance.matter.title}}'
+        'justmediationhub - New referred matter {{instance.matter.title}}'
         '{% endif %}'
     )
     email_content_template = (
@@ -451,7 +451,7 @@ class ReferralAcceptedResource(BaseNotificationResource):
         # Since inviter is not saved in MatterSharedWith and adding it is
         # troublesome(since it's m2m relation). We save it in as id in the
         # notification payload. Added these checks just to be save.
-        'JustMediation - Matter referral accepted {{instance.matter.title}}'
+        'justmediationhub - Matter referral accepted {{instance.matter.title}}'
         '{% endif %}'
     )
     email_content_template = (
@@ -524,7 +524,7 @@ class ReferralDeclinedResource(BaseNotificationResource):
         # Since inviter is not saved in MatterSharedWith and adding it is
         # troublesome(since it's m2m relation). We save it in as id in the
         # notification payload. Added these checks just to be save.
-        'JustMediation - Matter referral declined {{instance.matter.title}}'
+        'justmediationhub - Matter referral declined {{instance.matter.title}}'
         '{% endif %}'
     )
     email_content_template = (
@@ -598,7 +598,7 @@ class ReferralRevokedResource(BaseNotificationResource):
         # Since inviter is not saved in MatterSharedWith and adding it is
         # troublesome(since it's m2m relation). We save it in as id in the
         # notification payload. Added these checks just to be save.
-        'JustMediation - revoked matter {{instance.matter.title}}'
+        'justmediationhub - revoked matter {{instance.matter.title}}'
         '{% endif %}'
     )
     email_content_template = (

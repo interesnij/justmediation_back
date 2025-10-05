@@ -15,10 +15,10 @@ class AdminSite(DjangoAdminSite):
     """
 
     # Текст для размещения в конце <заголовка> каждой страницы.
-    site_title = _(f'JustMediation Administration')
+    site_title = _(f'justmediationhub Administration')
 
     # Текст для размещения в <h1> каждой страницы.
-    site_header = _(f'JustMediation Administration')
+    site_header = _(f'justmediationhub Administration')
 
     @never_cache
     def index(self, request, extra_context: dict = None):

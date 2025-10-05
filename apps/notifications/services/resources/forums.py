@@ -74,7 +74,7 @@ class NewMediatorCommentNotificationResource(BaseNotificationResource):
     )
     push_content_template = 'notifications/forums/new_mediator_post/push.txt'
     email_subject_template = (
-        'JustMediation - New forum activity from {{ instance.author.display_name }}'
+        'justmediationhub - New forum activity from {{ instance.author.display_name }}'
     )
     email_content_template = (
         'notifications/forums/new_mediator_post/email.html'
@@ -109,7 +109,7 @@ class NewPostNotificationResource(BaseNotificationResource):
     )
     push_content_template = 'notifications/forums/new_post_on_topic/push.txt'
     email_subject_template = (
-        'JustMediation - New Post on topic {{ instance.topic.title }}'
+        'justmediationhub - New Post on topic {{ instance.topic.title }}'
     )
     email_content_template = (
         'notifications/forums/new_post_on_topic/email.html'

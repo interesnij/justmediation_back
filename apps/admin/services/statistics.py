@@ -4,7 +4,7 @@ from ...users import services as user_services
 
 
 def get_apps_stats() -> dict:
-    """ Получите статистику приложения JustMediation для панели администратора и экспортируйте ее. """
+    """ Получите статистику приложения justmediationhub для панели администратора и экспортируйте ее. """
     stats = dict()
     stats['users_stats'] = user_services.get_stats_for_dashboard()
     stats['business_stats'] = business_services.get_stats_for_dashboard()

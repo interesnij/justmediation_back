@@ -60,7 +60,7 @@ CONSTANCE_ADDITIONAL_FIELDS = dict(
 
 CONSTANCE_CONFIG = dict(
     APP_LABEL=(
-        'JustMediation',
+        'justmediationhub',
         "App's label",
     ),
     ADMINS=(
@@ -112,7 +112,7 @@ CONSTANCE_CONFIG = dict(
         'url_field'
     ),
     PROD_FRONTEND_LINK=(
-        'https://app.justmediation.com/',
+        'https://app.justmediationhub.com/',
         'Prod frontend url',
         'url_field'
     ),

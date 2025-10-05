@@ -179,7 +179,7 @@ class AppUser(BaseModel, AbstractBaseUser, PermissionsMixin):
         'users.Timezone',
         on_delete=models.SET_NULL,
         related_name='users',
-        #blank=True,
+        blank=True,
         null=True,
         default=1  # Установите PST по умолчанию
     )

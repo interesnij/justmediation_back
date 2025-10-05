@@ -19,7 +19,7 @@ https://firebase.google.com/docs/firestore/security/get-started
 #### Deploy rules
 
 1. Go to Firebase console `https://console.firebase.google.com` and select
-   `JustMediation Platform` project.
+   `justmediationhub Platform` project.
 
 2. Go to `Database` service, open its `Rules` and copy whole contents of
    `firestore-rules.js` there.

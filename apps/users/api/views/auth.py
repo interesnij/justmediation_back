@@ -180,7 +180,7 @@ class VerifyConfirmEmailRedirectView(UserAgentLoggingMixin,
         from ....users.models import AppUser 
         user = AppUser.objects.filter(email=self.get_object().email_address).first()
         notifications.RegisterUserNotification(user).send()
-        return 'https://app.justmediation.com/auth/email-verified?success=true'
+        return 'https://app.justmediationhub.com/auth/email-verified?success=true'
 
     def get(self, *args, **kwargs):
         try:
@@ -190,7 +190,7 @@ class VerifyConfirmEmailRedirectView(UserAgentLoggingMixin,
         except Http404:
             self.object = None
         return redirect(
-            'https://app.justmediation.com/auth/email-verified?success=false'
+            'https://app.justmediationhub.com/auth/email-verified?success=false'
         )
 
 

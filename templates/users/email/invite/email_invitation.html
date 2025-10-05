@@ -6,11 +6,11 @@
 {% if invite.first_name and invite.last_name %}
 <p>{% blocktrans %}Dear{% endblocktrans %}, {{ invite.first_name }} {{ invite.last_name }}.</p>
 {% endif %}
-<p>You have been invited by {{ invite.inviter }} to join JustMediation.</p>
+<p>You have been invited by {{ invite.inviter }} to join justmediationhub.</p>
 {% if invite.message %}
 <p>Message:</p>
 <p>{{ invite.message }}</p>
 {% endif %}
-<p>Please follow <a href="{{ invite_link }}">this link</a> to join JustMediation.</p>
+<p>Please follow <a href="{{ invite_link }}">this link</a> to join justmediationhub.</p>
 {% endautoescape %}
 {% endblock %}
