@@ -20,6 +20,7 @@ __all__ = (
     'FeeKindAdmin',
     'SpecialityAdmin',
     'InviteAdmin',
-    'LanguageAdmin'
-    'EnterpriseAdmin'
+    'LanguageAdmin',
+    'EnterpriseAdmin',
+    'TimeZoneAdmin',
 )
