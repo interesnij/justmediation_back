@@ -78,6 +78,10 @@ class LanguageAdmin(ModelWithTitleAdmin):
 class LawFirmAdmin(BaseAdmin):
     """Admin panel for Law Firm"""
 
+@admin.register(models.TimeZone)
+class TimeZoneAdmin(BaseAdmin):
+    """Admin panel for Law Firm"""
+
 
 @admin.register(models.Currencies)
 class CurrenciesAdmin(admin.ModelAdmin):
