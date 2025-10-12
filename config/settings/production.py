@@ -49,10 +49,10 @@ EMAIL_HOST = 'smtp.sendgrid.net'
 EMAIL_HOST_USER = 'apikey'
 EMAIL_PORT = 587
 EMAIL_USE_TLS = True
-EMAIL_HOST_PASSWORD = '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'
+EMAIL_HOST_PASSWORD = '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'
 EMAIL_BACKEND = 'sgbackend.SendGridBackend' 
 
-SENDGRID_API_KEY = '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' 
+SENDGRID_API_KEY = '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' 
 SENDGRID_SANDBOX_MODE_IN_DEBUG=False
 SENDGRID_ECHO_TO_STDOUT=False 
 
