@@ -175,4 +175,4 @@ def send_shared_matter_notification(instance: AppUser, **kwargs):
     matter shared notification to him.
 
     """
-    tasks.send_shared_matter_notification_task(instance.id)
+    #tasks.send_shared_matter_notification_task(instance.id)
