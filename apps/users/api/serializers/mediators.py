@@ -62,12 +62,12 @@ class MediatorSerializer(AppUserRelatedSerializerMixin, BaseSerializer):
     has_active_subscription = serializers.ReadOnlyField(
         source='user.has_active_subscription'
     )
-    timezone = serializers.PrimaryKeyRelatedField(
-        source='user.timezone',
-        queryset=models.TimeZone.objects.all(),
-        required=False,
-        default=1,
-    )
+    #timezone = serializers.PrimaryKeyRelatedField(
+    #    source='user.timezone',
+    #    queryset=models.TimeZone.objects.all(),
+    #    required=False,
+    #    default=1,
+    #)
     timezone_data = TimezoneSerializer(source='user.timezone', read_only=True)
     enterprise = EnterpriseSerializer('enterprise', read_only=True)
     avatar = serializers.CharField(source='user.avatar', required=False)
@@ -133,7 +133,7 @@ class MediatorSerializer(AppUserRelatedSerializerMixin, BaseSerializer):
             'fee_currency',
             'fee_currency_data',
             'tax_rate',
-            'timezone',
+            #'timezone',
             'timezone_data',
             'enterprise',
             'owned_enterprise',
