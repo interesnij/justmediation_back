@@ -65,7 +65,8 @@ class MediatorSerializer(AppUserRelatedSerializerMixin, BaseSerializer):
     timezone = serializers.PrimaryKeyRelatedField(
         source='user.timezone',
         queryset=models.TimeZone.objects.all(),
-        required=False
+        required=False,
+        default=1,
     )
     timezone_data = TimezoneSerializer(source='user.timezone', read_only=True)
     enterprise = EnterpriseSerializer('enterprise', read_only=True)
