@@ -10,11 +10,9 @@ from . import models
 class PracticeAreaAdmin(core_admin.BaseAdmin):
     """Admin UI for Topic model."""
     list_display = (
-        'id',
         'title',
     )
     fields = (
-        'id',
         'title',
         'description',
     )
