@@ -1,8 +1,6 @@
 import mimetypes
 from django.db.models import signals
 from django.dispatch import Signal, receiver
-from config.enums import RecordContractKind
-from ..utils import eth
 from . import models 
 
 
@@ -93,6 +91,8 @@ def new_shared_file(
             instance=instance
         )
 
+from config.enums import RecordContractKind
+from ..utils import eth
 
 @receiver(signals.post_save, sender=models.Document)
 def save_to_contract(
@@ -101,6 +101,7 @@ def save_to_contract(
     if not created:
         return
 
+    return
     import hashlib, pathlib
     from urllib.request import urlopen
     file = urlopen(instance.file)
