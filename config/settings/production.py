@@ -93,17 +93,18 @@ CACHES = {
     }
 }
 
-firestore_config = { 
-    "auth_provider_x509_cert_url":"https://www.googleapis.com/oauth2/v1/certs",
-    "auth_uri":"https://accounts.google.com/o/oauth2/auth",
-    "client_email":"firebase-adminsdk-6tx9q@juslaw-platform-3fe6d.iam.gserviceaccount.com",
-    "client_id":"115845193159247278049",
-    "client_x509_cert_url":"https://www.googleapis.com/robot/v1/metadata/x509/firebase-adminsdk-6tx9q%40juslaw-platform-3fe6d.iam.gserviceaccount.com",
-    "private_key":"""-----BEGIN PRIVATE KEY-----\\nMIIEvAIBADANBgkqhkiG9w0BAQEFAASCBKYwggSiAgEAAoIBAQCPggltpBS6enkO\\nW3rxnQZsNeTa4pYSytPgXj+xfuf3lt0yJJpXKKKCAyH3xbIa6ozKXeQ28/xPVtLL\\n3cX7/qpGHXAN4+N+joj3vSMRbVBDDhfhldoxCAeC1Ss8V1B+7cAN7Ha8+JM+rXWY\\nb3yAERWSYOrlnl99l+6fZBFMR2jMYJCHSkWYGqjou7/dSpyPCA84P/LzXI5vsVt/\\nzFQLLO3oOlJKqzwqw4BDS3RhAdNby8fixm/HJ0q5sdNQxxziuVayEFJkaE6Ci3NB\\nF73lCy6Vlm7tBuJVmelHybwld7s4Lium7J0J5pPqq9k3lsUG8NrQPZ1XDxcbij/W\\nQYq4mT/lAgMBAAECggEAQzEScwh5QBqp5YQFm2z3HeFaBvZCaAgZjhry3Yta1v0H\\nEjw7G4YGGLOYyucAjkO1qeauPOCeCRPQ3O04jtVdKjkMRySlVpMsJDqlWbqB8vN9\\nUP0VzRFCWwquFLGZGeT9oEdQDQiiAJ28yqOgemIFZKUGNn6hnS9u5ag3xSxGMDJu\\nuiuOfpg44Ky6Y/Kn3K4rxUlncqTpzJZza/ZDgcngvqi8IC13tUj94/WOlZIOR/9L\\n62KagA/fb4nWln6g67m6YaS2ABmCjUMbZqA36ijBwdn812UPxVCBgT2NucgxuQVE\\n9WmRhkpNbdMLBjX7HE9QykJiF/Ie0HLHmJTELFkx3QKBgQDHN7OBeLRhHzsUFEBO\\nO9SXtvfYH53QrUha7kwE4iu5uUb0UwgU15zr8lNLmcUWu/cMOH4U9tkVpbTIaey7\\njd/GgDl9+ApkHY8bL+eXB9YECCEUhhPnrFi3x1HnZ3L+VGA2hGr0aS22DKTNff1e\\nuvvlLBGvHuY8TIeJsdNWC77hqwKBgQC4aV/Qizurawxc7FSAGppa87XoOBTV7Kf9\\nliaaZTyd+XXxT5lo/kxWa9I8jt4hWNQf7psqraVvl2CljNlEYx55ZiGeMknA/ama\\nQMumQ7GgGRx/AeBfjEcVvS2uHtZ7HxjeOl72G+OPL1da8ClNcwXYODsC7pDM1oXE\\nzlZ0rBL0rwKBgHulUsB1Dl+JZr2bpB3qfJR9d26okObH5jSp2nzdc44eNK/IKSfm\\nevrmuFQf6HenyjnHhlm0rCAHbSFGvSvbbpxhUU2h+bERt5SEMxVGQ8rU0NNQNGKC\\nUb4e8/LP/ktkSyMLJOb1sO1hA5iXLf7xxw4CQCeU4gli5mzL9gNd3udpAoGAPTT8\\nUENmMqb9G3p1MW+i+70YC1NR1w8NUuWbOnOPgv9hXg6FZIvC2ow+40qn/3l0LoUL\\ni0bHOhqMQWZWVpRvcOutDMy0HhITUNdgwHaHZhPvmVgOGKh+j4CSwNALcCIKJvhI\\nvHbVOJkF7XD4xHQA5JsFOxvjg5lQHNo/Z8oVIJECgYAqbNvZgYZKS3XwVk0U//0w\\nxuWPEV4nxhez9T2XX8XLp1xPV/le6DDusZJMKu7qqw3aiAQWHtD3Qx3absp5hJr/\\nyVN70vu4DwQAOUZNX+QOT1T1dKArhaNo8SdKTA43ppRWyWeKtDm03QP9P4enqFDn\\n3d5cPOB/IXno6NwFRTh6dw==\\n-----END PRIVATE KEY-----\\n""".replace(r'\n', '\n'),
-    "private_key_id":"e4b4117f49380ed306311ef9c105d14a8abf5372",
-    "project_id":"juslaw-platform-3fe6d",
-    "token_uri":"https://oauth2.googleapis.com/token",
-    "type":"service_account"
+firestore_config = {
+  "type": "service_account",
+  "project_id": "continual-tine-224909",
+  "private_key_id": "1aa3387d9097539225d73f0fd186b0173e9b3d47",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvQIBADANBgkqhkiG9w0BAQEFAASCBKcwggSjAgEAAoIBAQDXoNoF+pRLDM4R\nKbWO9bq0L0MIL8HCpi4DhBSzxj9PMjz3dhJwSDSLF6k95pfnu7xpjSudmpFVMGeX\nCHAaFoh5iYndLUs+Uc69ivGlwHsw0aQQrm+NjUI/xmlD254mNLsDch4L9F2q/n5W\nIuE1uBs4ujsQbxUP8AbJpnAgNhzTCVdcTfcH/ASnBgY7ytDBeROKpLJilojzDyVa\n2LozDW2hlNXMWaZ1aGrZla5oXbfDF73vltSwk/SUZfqQqcbg2nerphDYmypeSl2e\nY4r3f6L3OZFqEE++gbZjKRTFnCOiKibcqCP4JphKMAFQZ2xG01zkMtBuEG9s1dIy\nKRaelGthAgMBAAECggEAUiwTSfn/L0aW9QVvEibk2qu0INeKQHJx0JcyCHyBPd4I\nS8msJyvtEiCXN2a79uydVaAdwfbYcZ17rJvjlJ2HrsFST35mUT59yc+8XQ0oJSeP\nHWhMTKZLW+Bx1xFHiInJxvtjJe0fEP3hCVRLfNxHS2v0/ENIxIUVIR2TV0Mn4ufW\nBMxkg0mOLwsCjbBc9TJ/IqQ4JLb4p8rZhEFnQAp+97tFkgDPhofVDz99cdLA13dd\nqq2Wh8v2pWFJr0IB4SrHl4kKAmBgCE6A2/OCvGUAoIQc4+Wc3o59QIkdkwuM/6Sn\nToQqczevdGM58O43IgNTecoIrpC1rhA749TTvSacLQKBgQD5fBhMH9zE9KUETlji\ninXYiT3+e41rjUumHxxkvoGNVtrxIonWi0LgrOgVlkb1AS42hwzuRvauXMNPDtgO\nGCq8H1VCou3lfjYpPVM9srrb400Lob1ei2QwTvHPZxwRnHlsCB4dYnCPGQYEI26A\nY3LywBy7kCBKJwzMvutl/Ae7WwKBgQDdQmm+9aGWDywmsCD/iDXfoiG4hAmaYZjN\nMhdMsm4EXtWttXufFtWFLoxbyZbkcAK2YoJIL41Hg/1/K09t8e/cUz78KEP8ClCR\nDqh68djJMb6biI/xnkHsoeleMY/YV5KqlPO3Zc9t2+fcecve9dUmUvnWVZMxncD3\nDuI4nXD88wKBgHY2O5kOW+Ai/3Gr4eftrWsdlHdZeaflelvLT/vYXLBo4DLzp5Y1\nxEmLBCj+XL7IgWoq0ZCxpT73C0ARi4QaJV2gBxkc9FYSWH1v5lpMrsdzy1TgnUcI\nCz/smB0rARzDJLFwozxPIYBcXgJl+3zwIk4tgy/IWdRo7mKxb/6RzeQTAoGBAMib\nmn0FAEip4QIC1yhYO2BUA/bj4EEVFBGXxQBJFu7nfR1OWpNXhKiIF8Jw+FqOJCdx\nEWaZlqKszX4rqoyouy0sXQMLDvjJ8VpTy/YMqN1iOMuT+c68ClGeS5SXozAn1lbL\nTl2N9ZBJveNsmqfAhE2HFfZ7CEYIHhjiacGjHfp5AoGALctIJMvlaFxzkW3mI1xf\n5IekNOana3lxZqZhqp81oJWoNHB4GVOkEUKhdbSPLjRFDJSURHBGfA1ouHvNhSyC\nPthQdjuk+P1yLgBY0NeRJC1Q5AOzcEAXUdhunJ/AuGT7b5t1ETI4Qkk2PO9ZC8o7\nuxu1ZETugu2X71s5zuhtqcQ=\n-----END PRIVATE KEY-----\n",
+  "client_email": "firebase-adminsdk-c9jhq@continual-tine-224909.iam.gserviceaccount.com",
+  "client_id": "112247693818316605976",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/firebase-adminsdk-c9jhq%40continual-tine-224909.iam.gserviceaccount.com",
+  "universe_domain": "googleapis.com"
 }
 
 STRIPE_ENABLED = True
