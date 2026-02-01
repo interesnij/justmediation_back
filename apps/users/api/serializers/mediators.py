@@ -311,13 +311,13 @@ class UpdateMediatorSerializer(CurrentMediatorSerializer):
                 mediator, practice_jurisdictions
             )
 
-        if 'registration_attachments' in validated_data:
-            registration_attachments = validated_data.pop(
-                'registration_attachments', []
-            )
-            self.update_registration_attachments(
-                mediator, registration_attachments
-            )
+        #if 'registration_attachments' in validated_data:
+        #    registration_attachments = validated_data.pop(
+        #        'registration_attachments', []
+        #    )
+        #    self.update_registration_attachments(
+        #        mediator, registration_attachments
+        #    )
 
         if 'education' in validated_data:
             education = validated_data.pop('education', [])
