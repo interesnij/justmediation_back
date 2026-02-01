@@ -379,22 +379,22 @@ class UpdateMediatorSerializer(CurrentMediatorSerializer):
         # Идентификаторы, полученные из запросов
         input_files_urls = set(registration_attachments)
 
-        # Идентификаторы вложений адвоката
+        # Идентификаторы  вложений адвоката
         existing_files_urls = set(current_attachments.values_list(
             'attachment', flat=True
         ))
 
-        to_add = input_files_urls - existing_files_urls
-        to_delete = existing_files_urls - input_files_urls
+        #to_add = input_files_urls - existing_files_urls
+        #to_delete = existing_files_urls - input_files_urls
 
-        current_attachments.filter(attachment__in=to_delete).delete()
+        #current_attachments.filter(attachment__in=to_delete).delete()
 
         models.MediatorRegistrationAttachment.objects.bulk_create(
             models.MediatorRegistrationAttachment(
                 mediator=mediator,
                 attachment=file_url,
             )
-            for file_url in to_add
+            for file_url in existing_files_urls
         )
 
 
