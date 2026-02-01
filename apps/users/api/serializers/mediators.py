@@ -389,13 +389,13 @@ class UpdateMediatorSerializer(CurrentMediatorSerializer):
 
         #current_attachments.filter(attachment__in=to_delete).delete()
 
-        models.MediatorRegistrationAttachment.objects.bulk_create(
-            models.MediatorRegistrationAttachment(
-                mediator=mediator,
-                attachment=file_url,
-            )
-            for file_url in existing_files_urls
-        )
+        #models.MediatorRegistrationAttachment.objects.bulk_create(
+        #    models.MediatorRegistrationAttachment(
+        #        mediator=mediator,
+        #        attachment=file_url,
+        #    )
+        #    for file_url in existing_files_urls
+        #)
 
 
 class MediatorOnboardingSerializer(MediatorSerializer):
