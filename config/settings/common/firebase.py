@@ -7,7 +7,7 @@ FIREBASE = {
 
 FIREBASE_CONFIG = {}
 
-FIREBASE_ENABLED = True
+FIREBASE_ENABLED = False
 
 # path to created files with firebase credentials taken from vault
 FIREBASE_SETTINGS_FOLDER = 'config/google-credentials/'
