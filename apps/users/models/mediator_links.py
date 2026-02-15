@@ -92,7 +92,7 @@ class MediatorRegistrationAttachment(BaseModel):
     )
 
     attachment = models.CharField(
-        max_length=255,
+        max_length=500,
         verbose_name=_('Attachment file'),
         blank=True,
         null=True,
