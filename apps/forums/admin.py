@@ -31,7 +31,7 @@ class TopicAdmin(core_admin.BaseAdmin):
         'practice_area',
     )
     list_display_links = (
-        'title'
+        'title',
     )
     list_select_related = (
         'practice_area',
