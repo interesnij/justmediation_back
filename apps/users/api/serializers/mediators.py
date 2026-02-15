@@ -460,12 +460,12 @@ class MediatorOnboardingSerializer(MediatorSerializer):
                 for education_data in education
             )
         # Добавление вложений
-        models.MediatorRegistrationAttachment.objects.bulk_create(
-            models.MediatorRegistrationAttachment(
-                mediator=mediator, attachment=file_url
-            )
-            for file_url in registration_attachments
-        )
+        #models.MediatorRegistrationAttachment.objects.bulk_create(
+        #    models.MediatorRegistrationAttachment(
+        #        mediator=mediator, attachment=file_url
+        #    )
+        #    for file_url in registration_attachments
+        #)
 
         return super().update(mediator, validated_data)
 
@@ -611,12 +611,12 @@ class MediatorRegisterSerializer(
                 for education_data in education
             )
         # Добавление вложений
-        models.MediatorRegistrationAttachment.objects.bulk_create(
-            models.MediatorRegistrationAttachment(
-                mediator=mediator, attachment=file_url
-            )
-            for file_url in registration_attachments
-        )
+        #models.MediatorRegistrationAttachment.objects.bulk_create(
+        #    models.MediatorRegistrationAttachment(
+        #        mediator=mediator, attachment=file_url
+        #    )
+        #    for file_url in registration_attachments
+        #)
 
         #  Добавить пользователя в список отраслевых контактов приглашающего
         invite_uuid = self.context.get('invite_uuid')
