@@ -563,9 +563,9 @@ class MediatorRegisterSerializer(
         firm_locations = mediator_data.pop(
             'firm_locations', []
         )
-        registration_attachments = mediator_data.pop(
-            'registration_attachments', []
-        )
+        #registration_attachments = mediator_data.pop(
+        #    'registration_attachments', []
+        #)
         # Удалить поля, связанные с платежной информацией
         mediator_data.pop('payment_method', None)
         payment_type = mediator_data.pop('payment_type', None)
