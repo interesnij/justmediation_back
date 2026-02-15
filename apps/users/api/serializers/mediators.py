@@ -311,13 +311,14 @@ class UpdateMediatorSerializer(CurrentMediatorSerializer):
                 mediator, practice_jurisdictions
             )
 
-        #if 'registration_attachments' in validated_data:
-        #    registration_attachments = validated_data.pop(
-        #        'registration_attachments', []
-        #    )
-        #    self.update_registration_attachments(
-        #        mediator, registration_attachments
-        #    )
+        if 'registration_attachments' in validated_data:
+            registration_attachments = validated_data.pop(
+                'registration_attachments', []
+            )
+            print("registration_attachments", registration_attachments)
+            self.update_registration_attachments(
+                mediator, registration_attachments
+            )
 
         if 'education' in validated_data:
             education = validated_data.pop('education', [])
@@ -384,18 +385,19 @@ class UpdateMediatorSerializer(CurrentMediatorSerializer):
             'attachment', flat=True
         ))
 
-        #to_add = input_files_urls - existing_files_urls
-        #to_delete = existing_files_urls - input_files_urls
+        to_add = input_files_urls - existing_files_urls
+        to_delete = existing_files_urls - input_files_urls
 
-        #current_attachments.filter(attachment__in=to_delete).delete()
+        current_attachments.filter(attachment__in=to_delete).delete()
+        print("existing_files_urls", existing_files_urls)
 
-        #models.MediatorRegistrationAttachment.objects.bulk_create(
-        #    models.MediatorRegistrationAttachment(
-        #        mediator=mediator,
-        #        attachment=file_url,
-        #    )
-        #    for file_url in existing_files_urls
-        #)
+        models.MediatorRegistrationAttachment.objects.bulk_create(
+            models.MediatorRegistrationAttachment(
+                mediator=mediator,
+                attachment=file_url,
+            )
+            for file_url in existing_files_urls
+        )
 
 
 class MediatorOnboardingSerializer(MediatorSerializer):
@@ -460,12 +462,12 @@ class MediatorOnboardingSerializer(MediatorSerializer):
                 for education_data in education
             )
         # Добавление вложений
-        #models.MediatorRegistrationAttachment.objects.bulk_create(
-        #    models.MediatorRegistrationAttachment(
-        #        mediator=mediator, attachment=file_url
-        #    )
-        #    for file_url in registration_attachments
-        #)
+        models.MediatorRegistrationAttachment.objects.bulk_create(
+            models.MediatorRegistrationAttachment(
+                mediator=mediator, attachment=file_url
+            )
+            for file_url in registration_attachments
+        )
 
         return super().update(mediator, validated_data)
 
@@ -563,9 +565,9 @@ class MediatorRegisterSerializer(
         firm_locations = mediator_data.pop(
             'firm_locations', []
         )
-        #registration_attachments = mediator_data.pop(
-        #    'registration_attachments', []
-        #)
+        registration_attachments = mediator_data.pop(
+            'registration_attachments', []
+        )
         # Удалить поля, связанные с платежной информацией
         mediator_data.pop('payment_method', None)
         payment_type = mediator_data.pop('payment_type', None)
@@ -611,12 +613,12 @@ class MediatorRegisterSerializer(
                 for education_data in education
             )
         # Добавление вложений
-        #models.MediatorRegistrationAttachment.objects.bulk_create(
-        #    models.MediatorRegistrationAttachment(
-        #        mediator=mediator, attachment=file_url
-        #    )
-        #    for file_url in registration_attachments
-        #)
+        models.MediatorRegistrationAttachment.objects.bulk_create(
+            models.MediatorRegistrationAttachment(
+                mediator=mediator, attachment=file_url
+            )
+            for file_url in registration_attachments
+        )
 
         #  Добавить пользователя в список отраслевых контактов приглашающего
         invite_uuid = self.context.get('invite_uuid')

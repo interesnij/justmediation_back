@@ -8,20 +8,6 @@ from apps.users.validators import validate_activity_year
 from .mediators import Mediator
 
 
-def upload_registration_attachments_to(instance, filename: str) -> str:
-    """ Загрузите `documents` адвокатов в папку для регистрации.
-        Аргументы:
-        instance (Document): доверенность
-        filename (str): имя файла documents
-        Возвращается:
-            str: Сгенерированный путь к файлу documents.
-    """
-    template = 'public/mediator_registration_attachments/{folder}/{filename}'
-    return template.format(
-        folder=uuid.uuid4(),
-        filename=filename
-    )
-    
 class MediatorEducation(BaseModel):
     """ Определяет отношения "многие ко многим" между адвокатом и университетом.
     Университет - это место, где адвокат изучал юриспруденцию и окончил
