@@ -109,7 +109,7 @@ class MediatorViewSet(
         'appointment_type',
         'payment_type',
         'spoken_language',
-        'registration_attachments',
+        #'registration_attachments',
         'user__billing_item__billing_items_invoices',
     )
     filterset_class = MediatorFilter
@@ -816,7 +816,7 @@ class CurrentMediatorView(
         'appointment_type',
         'payment_type',
         'spoken_language',
-        'registration_attachments',
+        #'registration_attachments',
     )
 
     def get_object(self):
