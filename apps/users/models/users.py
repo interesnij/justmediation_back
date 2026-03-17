@@ -63,6 +63,8 @@ class AppUser(BaseModel, AbstractBaseUser, PermissionsMixin):
     USER_TYPE_CLIENT = 'client'
     USER_TYPE_SUPPORT = 'support'
     USER_TYPE_STAFF = 'staff'
+    USER_TYPE_ATTORNEY = 'attorney'
+    USER_TYPE_CORPORATE = 'corporate'
 
     USER_TYPES = (
         USER_TYPE_MEDIATOR,
@@ -70,6 +72,8 @@ class AppUser(BaseModel, AbstractBaseUser, PermissionsMixin):
         USER_TYPE_CLIENT,
         USER_TYPE_SUPPORT,
         USER_TYPE_STAFF,
+        USER_TYPE_ATTORNEY,
+        USER_TYPE_CORPORATE,
     )
 
     uuid = models.UUIDField(
@@ -225,16 +229,15 @@ class AppUser(BaseModel, AbstractBaseUser, PermissionsMixin):
 
     @property
     def is_mediator(self):
-        """ Проверьте, является ли пользователь адвокатом или нет.
-        self.mediator - это ссылка на модель адвоката, определенную в mediators.py .
-        """
         return hasattr(self, 'mediator')
-
+    @property
+    def is_attorney(self):
+        return hasattr(self, 'attorney')
+    @property
+    def is_corporate(self):
+        return hasattr(self, 'corporate')
     @property
     def is_client(self):
-        """ Проверьте, является ли пользователь клиентом или нет.
-        self.client - это ссылка на клиентскую модель, определенную в clients.py .
-        """
         return hasattr(self, 'client')
 
     @property
@@ -277,6 +280,10 @@ class AppUser(BaseModel, AbstractBaseUser, PermissionsMixin):
             return self.USER_TYPE_CLIENT
         elif self.is_enterprise_admin:
             return self.USER_TYPE_ENTERPRISE
+        elif self.is_corporate:
+            return self.USER_TYPE_CORPORATE
+        elif self.is_attorney:
+            return self.USER_TYPE_ATTORNEY
         elif self.is_mediator:
             return self.USER_TYPE_MEDIATOR
         elif self.is_support:
