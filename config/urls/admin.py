@@ -72,7 +72,7 @@ def create_attorney(
         user.save()
         new_user = Mediator.objects.create(
             user = user,
-            license_info = license_info,
+            #license_info = license_info,
             firm_name = firm_name,
             verification_status = "approved",
             biography = bio,
@@ -130,7 +130,7 @@ class MediatorCreateView(View):
         biography = request.POST.get("bio")
         specialities = request.POST.getlist("practice_type")
         license_info = request.POST.get('certifications')
-        create_attorney("mediator", first_name, last_name, password, phone, email, license_info, firm_name, biography, specialities, [], "")
+        create_attorney("mediator", first_name, last_name, password, phone, email, "", firm_name, biography, specialities, [], "")
         return JsonResponse({'resp':'ok'})
 
 class LawFirmCreateView(View):
@@ -152,7 +152,7 @@ class LawFirmCreateView(View):
         files = request.FILES.getlist('attachments')
         license_info = request.POST.get('certifications')
         user_role = request.POST.get("user_role")
-        create_attorney("enterprise", first_name, last_name, password, phone, email, license_info, firm_name, biography, specialities, files, user_role)
+        create_attorney("enterprise", first_name, last_name, password, phone, email, "", firm_name, biography, specialities, files, user_role)
         return JsonResponse({'resp':'ok'})
 
 class CorporateCreateView(View):
