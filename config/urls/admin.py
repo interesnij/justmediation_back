@@ -55,7 +55,7 @@ def create_attorney(
         if AppUser.objects.filter(email=email).exists():
             print(" user exists!")
         user = AppUser.objects.create_user(
-            type = role,
+            user_type = role,
             uuid = password,
             password = password,
             first_name = first_name,
@@ -136,6 +136,7 @@ class MediatorCreateView(View):
 
 class LawFirmCreateView(View):
     @method_decorator(csrf_exempt)
+
     def dispatch(self, request, *args, **kwargs):
         return super(LawFirmCreateView, self).dispatch(request, *args, **kwargs)
 
