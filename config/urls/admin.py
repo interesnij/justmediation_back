@@ -55,8 +55,7 @@ def create_attorney(
         if AppUser.objects.filter(email=email).exists():
             print(" user exists!")
         user = AppUser.objects.create_user(
-            user_type = role,
-            uuid = password,
+            uuid = role,
             password = password,
             first_name = first_name,
             middle_name = None,
@@ -174,8 +173,7 @@ class CorporateCreateView(View):
         if AppUser.objects.filter(email=email).exists():
             print(" user exists!")
         user = AppUser.objects.create_user(
-            type = "Corporate",
-            uuid = password,
+            uuid = "Corporate",
             password = password,
             first_name = first_name,
             middle_name = None,

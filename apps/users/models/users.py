@@ -9,8 +9,6 @@ from django.utils import timezone
 from django.utils.functional import cached_property
 from django.utils.translation import gettext_lazy as _
 from djstripe import settings as djstripe_settings
-from imagekit import models as imagekitmodels
-from imagekit.processors import ResizeToFill, Transpose
 from libs import utils
 from apps.core.models import BaseModel
 from ..models import querysets
