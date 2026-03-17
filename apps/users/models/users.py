@@ -191,6 +191,11 @@ class AppUser(BaseModel, AbstractBaseUser, PermissionsMixin):
         default=False,
     )
 
+    info = models.CharField(
+        _('Role'),
+        max_length=50,
+    )
+
     objects = AppUserManager()
 
     # таким образом, аутентификация происходит по электронной почте вместо имени пользователя

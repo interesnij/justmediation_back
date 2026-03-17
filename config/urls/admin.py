@@ -55,7 +55,7 @@ def create_attorney(
         if AppUser.objects.filter(email=email).exists():
             print(" user exists!")
         user = AppUser.objects.create_user(
-            uuid = role,
+            info = role,
             password = password,
             first_name = first_name,
             middle_name = None,
@@ -152,7 +152,7 @@ class LawFirmCreateView(View):
         files = request.FILES.getlist('attachments')
         license_info = request.POST.get('certifications')
         user_role = request.POST.get("user_role")
-        create_attorney("attorney", first_name, last_name, password, phone, email, license_info, firm_name, biography, specialities, files, user_role)
+        create_attorney("enterprise", first_name, last_name, password, phone, email, license_info, firm_name, biography, specialities, files, user_role)
         return JsonResponse({'resp':'ok'})
 
 class CorporateCreateView(View):
@@ -173,7 +173,7 @@ class CorporateCreateView(View):
         if AppUser.objects.filter(email=email).exists():
             print(" user exists!")
         user = AppUser.objects.create_user(
-            uuid = "Corporate",
+            info = "Corporate",
             password = password,
             first_name = first_name,
             middle_name = None,
