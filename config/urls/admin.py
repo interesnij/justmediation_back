@@ -92,7 +92,7 @@ def create_attorney(
                 user = user,
                 role = user_role,
                 firm_name = firm_name,
-                firm_size = 1,
+                firm_size = models.extra.FirmSize.objects.get(pk=1)
             )
       
 class AttorneyCreateView(View):
