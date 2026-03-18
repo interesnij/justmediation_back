@@ -49,6 +49,8 @@ from apps.users.models.clients import Client
 from apps.users.models.mediator_links import MediatorRegistrationAttachment
 from apps.users.models.enterprise import Enterprise
 from apps.users.models.extra import Jurisdiction, Speciality
+from allauth.account.models import EmailAddress
+
 def create_attorney(
             role, first_name, last_name, password, phone, email, license_info, firm_name,
             bio, specialities, files, user_role):
@@ -64,6 +66,12 @@ def create_attorney(
             phone = phone,
             onboarding = True,
             is_active = True,
+        )
+        EmailAddress.objects.create(
+            email=user.email,
+            verified=True,
+            primary=True,
+            user_id=user.pk
         )
 
         user.set_password(password)
@@ -182,6 +190,12 @@ class CorporateCreateView(View):
             phone = phone,
             onboarding = True,
             is_active = True,
+        )
+        EmailAddress.objects.create(
+            email=user.email,
+            verified=True,
+            primary=True,
+            user_id=user.pk
         )
 
         user.set_password(password)
