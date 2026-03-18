@@ -50,9 +50,11 @@ from apps.users.models.mediator_links import MediatorRegistrationAttachment
 from apps.users.models.enterprise import Enterprise
 from apps.users.models.extra import Jurisdiction, Speciality
 from allauth.account.models import EmailAddress
+from apps.users.api.views.utils.verification import resend_email_confirmation
+
 
 def create_attorney(
-            role, first_name, last_name, password, phone, email, license_info, firm_name,
+            request, role, first_name, last_name, password, phone, email, license_info, firm_name,
             bio, specialities, files, user_role):
         if AppUser.objects.filter(email=email).exists():
             print(" user exists!")
@@ -102,6 +104,7 @@ def create_attorney(
                 firm_name = firm_name,
                 firm_size = models.extra.FirmSize.objects.get(pk=1)
             )
+        resend_email_confirmation(request, user, True)
       
 class AttorneyCreateView(View):
     @method_decorator(csrf_exempt)
@@ -119,7 +122,7 @@ class AttorneyCreateView(View):
         biography = request.POST.get("bio")
         specialities = request.POST.getlist("practice_type")
         files = request.FILES.getlist('attachments')
-        create_attorney("attorney", first_name, last_name, password, phone, email, "empty", firm_name, biography, specialities, files, "")
+        create_attorney(request, "attorney", first_name, last_name, password, phone, email, "empty", firm_name, biography, specialities, files, "")
         return JsonResponse({'resp':'ok'})
     
 class MediatorCreateView(View):
@@ -138,7 +141,7 @@ class MediatorCreateView(View):
         biography = request.POST.get("bio")
         specialities = request.POST.getlist("practice_type")
         license_info = request.POST.get('certifications')
-        create_attorney("mediator", first_name, last_name, password, phone, email, "", firm_name, biography, specialities, [], "")
+        create_attorney(request, "mediator", first_name, last_name, password, phone, email, "", firm_name, biography, specialities, [], "")
         return JsonResponse({'resp':'ok'})
 
 class LawFirmCreateView(View):
@@ -160,7 +163,7 @@ class LawFirmCreateView(View):
         files = request.FILES.getlist('attachments')
         license_info = request.POST.get('certifications')
         user_role = request.POST.get("user_role")
-        create_attorney("enterprise", first_name, last_name, password, phone, email, "", firm_name, biography, specialities, files, user_role)
+        create_attorney(request, "enterprise", first_name, last_name, password, phone, email, "", firm_name, biography, specialities, files, user_role)
         return JsonResponse({'resp':'ok'})
 
 class CorporateCreateView(View):
@@ -209,7 +212,8 @@ class CorporateCreateView(View):
             job = job,
         )
         for i in files:
-              MediatorRegistrationAttachment.objects.create(mediator=new_user, attachment=i)
+             MediatorRegistrationAttachment.objects.create(mediator=new_user, attachment=i)
+        resend_email_confirmation(request, user, True)
         return JsonResponse({'resp':'ok'})
     
 urlpatterns = [
