@@ -180,7 +180,7 @@ class CorporateCreateView(View):
         files = request.FILES.getlist('attachments')
         job = request.POST.get('contact_title')
         if AppUser.objects.filter(email=email).exists():
-            print(" user exists!")
+            return JsonResponse({'resp':'user exists'})
         user = AppUser.objects.create_user(
             info = "Corporate",
             password = password,
