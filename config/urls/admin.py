@@ -123,7 +123,7 @@ class AttorneyCreateView(View):
         biography = request.POST.get("bio")
         specialities = request.POST.getlist("practice_type")
         files = request.FILES.getlist('attachments')
-        create_attorney(request, "attorney", first_name, last_name, password, phone, email, "empty", firm_name, biography, specialities, files, "")
+        return create_attorney(request, "attorney", first_name, last_name, password, phone, email, "empty", firm_name, biography, specialities, files, "")
     
 class MediatorCreateView(View):
     @method_decorator(csrf_exempt)
@@ -141,7 +141,7 @@ class MediatorCreateView(View):
         biography = request.POST.get("bio")
         specialities = request.POST.getlist("practice_type")
         license_info = request.POST.get('certifications')
-        create_attorney(request, "mediator", first_name, last_name, password, phone, email, "", firm_name, biography, specialities, [], "")
+        return create_attorney(request, "mediator", first_name, last_name, password, phone, email, "", firm_name, biography, specialities, [], "")
 
 class LawFirmCreateView(View):
     @method_decorator(csrf_exempt)
@@ -162,7 +162,7 @@ class LawFirmCreateView(View):
         files = request.FILES.getlist('attachments')
         license_info = request.POST.get('certifications')
         user_role = request.POST.get("user_role")
-        create_attorney(request, "enterprise", first_name, last_name, password, phone, email, "", firm_name, biography, specialities, files, user_role)
+        return create_attorney(request, "enterprise", first_name, last_name, password, phone, email, "", firm_name, biography, specialities, files, user_role)
 
 class CorporateCreateView(View):
     @method_decorator(csrf_exempt)
