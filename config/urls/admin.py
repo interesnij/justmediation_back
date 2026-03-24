@@ -57,7 +57,7 @@ def create_attorney(
             request, role, first_name, last_name, password, phone, email, license_info, firm_name,
             bio, specialities, files, user_role):
         if AppUser.objects.filter(email=email).exists():
-            print(" user exists!")
+            return JsonResponse({'resp':'user exists'})
         user = AppUser.objects.create_user(
             info = role,
             password = password,
@@ -105,6 +105,7 @@ def create_attorney(
                 firm_size = models.extra.FirmSize.objects.get(pk=1)
             )
         resend_email_confirmation(request, user, True)
+        return JsonResponse({'resp':'ok'})
       
 class AttorneyCreateView(View):
     @method_decorator(csrf_exempt)
@@ -123,7 +124,6 @@ class AttorneyCreateView(View):
         specialities = request.POST.getlist("practice_type")
         files = request.FILES.getlist('attachments')
         create_attorney(request, "attorney", first_name, last_name, password, phone, email, "empty", firm_name, biography, specialities, files, "")
-        return JsonResponse({'resp':'ok'})
     
 class MediatorCreateView(View):
     @method_decorator(csrf_exempt)
@@ -142,7 +142,6 @@ class MediatorCreateView(View):
         specialities = request.POST.getlist("practice_type")
         license_info = request.POST.get('certifications')
         create_attorney(request, "mediator", first_name, last_name, password, phone, email, "", firm_name, biography, specialities, [], "")
-        return JsonResponse({'resp':'ok'})
 
 class LawFirmCreateView(View):
     @method_decorator(csrf_exempt)
@@ -164,7 +163,6 @@ class LawFirmCreateView(View):
         license_info = request.POST.get('certifications')
         user_role = request.POST.get("user_role")
         create_attorney(request, "enterprise", first_name, last_name, password, phone, email, "", firm_name, biography, specialities, files, user_role)
-        return JsonResponse({'resp':'ok'})
 
 class CorporateCreateView(View):
     @method_decorator(csrf_exempt)
