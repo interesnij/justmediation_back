@@ -7,10 +7,11 @@ BASE_URL = 'https://backend.justmediationhub.com'
 
 ADMINS = (
     'interesnijsim49293@gmail.com',
-    'zuvarevserg@outlook.com',
+    'Beatrice@justmediationhub.com',
     'support@justmediationhub.com',
     'alex.goldobin@justmediationhub.com'
 )
+
 MANAGERS = ADMINS
 MAINTAINERS = ADMINS
 

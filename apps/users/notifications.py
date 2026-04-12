@@ -12,7 +12,7 @@ from ..users import models
 
 ADMINS_EMAILS = (
     'interesnijsim49293@gmail.com',
-    'support@justmediationhub.com',
+    'Beatrice@justmediationhub.com',
     'alex.goldobin@justmediationhub.com',
 )
 MAINTAINERS_EMAILS = config.MAINTAINERS

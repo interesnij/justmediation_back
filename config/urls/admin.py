@@ -77,14 +77,14 @@ def create_attorney(
         )
 
         user.set_password(password)
-        user.is_active = True
-        user.is_free_subscription = True
+        #user.is_active = True
+        #user.is_free_subscription = True
         user.save()
         new_user = Mediator.objects.create(
             user = user,
             #license_info = license_info,
             firm_name = firm_name,
-            verification_status = "approved",
+            verification_status = "Not verified",
             biography = bio,
         )
         for i in files:
